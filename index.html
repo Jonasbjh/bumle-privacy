@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bumle Bjørn: mammas stemme, ikke en robot.</title>
-<meta name="description" content="Bumle Bjørn er en pedagogisk app for barn 1 til 8 år. Foreldre, besteforeldre og logopeder spiller inn sin egen stemme. Engangskjøp, ingen abonnement.">
+<title>Bumle Bjørn: mum's voice, not a robot.</title>
+<meta name="description" content="Bumle Bjørn is an educational app for children ages 1 to 8. Parents, grandparents and speech therapists record their own voice. One-time purchase, no subscription.">
 <link rel="alternate" hreflang="no" href="https://bumle.app/">
 <link rel="alternate" hreflang="en" href="https://bumle.app/en/">
 <link rel="alternate" hreflang="x-default" href="https://bumle.app/">
-<link rel="icon" type="image/png" href="app-icon.png">
-<link rel="apple-touch-icon" href="app-icon.png">
-<meta property="og:title" content="Bumle Bjørn: mammas stemme, ikke en robot.">
-<meta property="og:description" content="En liten app som lærer barn ord, fortalt med stemmene de er glad i.">
+<link rel="icon" type="image/png" href="../app-icon.png">
+<link rel="apple-touch-icon" href="../app-icon.png">
+<meta property="og:title" content="Bumle Bjørn: mum's voice, not a robot.">
+<meta property="og:description" content="A little app that teaches children words, told in the voices they love.">
 <meta property="og:image" content="https://bumle.app/app-icon.png">
 <meta name="theme-color" content="#C2542A">
 
@@ -33,221 +33,66 @@
   --gold: #C99A45;
 }
 html { scroll-behavior: smooth; }
-body {
-  background: var(--cream);
-  color: var(--ink);
-  font-family: 'Newsreader', Georgia, serif;
-  min-height: 100vh;
-  padding-bottom: 60px;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-}
-body::before {
-  content: '';
-  position: fixed; inset: 0; pointer-events: none; z-index: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(31,22,17,.04) 1px, transparent 0);
-  background-size: 4px 4px;
-  mix-blend-mode: multiply;
-}
+body { background: var(--cream); color: var(--ink); font-family: 'Newsreader', Georgia, serif; min-height: 100vh; padding-bottom: 60px; -webkit-font-smoothing: antialiased; position: relative; }
+body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0; background-image: radial-gradient(circle at 1px 1px, rgba(31,22,17,.04) 1px, transparent 0); background-size: 4px 4px; mix-blend-mode: multiply; }
 a { color: inherit; text-decoration: none; }
 a:hover { opacity: .7; }
 
-/* Layout helpers */
-.wrap { max-width: 1400px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 1; }
-@media (max-width: 720px) { .wrap { padding: 0 24px; } }
-
-.mono { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; }
 .label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--accent); }
 .italic { font-style: italic; color: var(--accent); font-weight: 300; }
-.serif { font-family: 'Fraunces', serif; }
 
-/* NAV */
-nav.site {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 24px 48px;
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(247, 239, 226, 0.92);
-  backdrop-filter: saturate(150%) blur(10px);
-  -webkit-backdrop-filter: saturate(150%) blur(10px);
-  border-bottom: 1px solid rgba(31,22,17,.06);
-}
-nav.site .logo {
-  display: flex; align-items: center; gap: 12px;
-  font-family: 'Fraunces', serif;
-  font-size: 22px; font-weight: 500; letter-spacing: -.02em;
-}
+nav.site { display: flex; align-items: center; justify-content: space-between; padding: 24px 48px; font-family: 'Inter', sans-serif; font-size: 13px; position: sticky; top: 0; z-index: 100; background: rgba(247, 239, 226, 0.92); backdrop-filter: saturate(150%) blur(10px); -webkit-backdrop-filter: saturate(150%) blur(10px); border-bottom: 1px solid rgba(31,22,17,.06); }
+nav.site .logo { display: flex; align-items: center; gap: 12px; font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; letter-spacing: -.02em; }
 nav.site .logo svg { width: 36px; height: 36px; }
 nav.site .links { display: flex; gap: 32px; }
 nav.site .right { display: flex; gap: 16px; align-items: center; }
 nav.site .lang-switch { display: flex; gap: 4px; }
 nav.site .lang-switch a { font-size: 18px; padding: 4px 6px; line-height: 1; border-radius: 4px; }
 nav.site .lang-switch a.active { background: rgba(194,84,42,0.15); }
-nav.site .cta {
-  background: var(--ink); color: var(--cream);
-  padding: 10px 18px; border-radius: 999px;
-  font-weight: 500; font-size: 13px;
-  transition: opacity .15s;
-}
-@media (max-width: 900px) {
-  nav.site { padding: 18px 24px; }
-  nav.site .links { display: none; }
-}
+nav.site .cta { background: var(--ink); color: var(--cream); padding: 10px 18px; border-radius: 999px; font-weight: 500; font-size: 13px; }
+@media (max-width: 900px) { nav.site { padding: 18px 24px; } nav.site .links { display: none; } }
 
-/* HERO */
 section.hero { padding: 80px 48px 60px; max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
 @media (max-width: 900px) { section.hero { padding: 48px 24px 40px; } }
-
-.issue {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px; letter-spacing: .3em; text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 40px;
-  display: flex; gap: 24px; align-items: center; flex-wrap: wrap;
-}
+.issue { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--accent); margin-bottom: 40px; display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
 .issue .line { flex: 1; height: 1px; background: var(--ink); opacity: .12; min-width: 40px; }
-
 .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: center; }
 @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
-
-.headline {
-  font-family: 'Fraunces', 'Newsreader', serif;
-  font-weight: 300;
-  font-size: clamp(56px, 9vw, 148px);
-  line-height: 0.92;
-  letter-spacing: -.04em;
-  margin: 0;
-  font-variation-settings: '"SOFT"' 50, '"WONK"' 1;
-}
+.headline { font-family: 'Fraunces', 'Newsreader', serif; font-weight: 300; font-size: clamp(56px, 9vw, 148px); line-height: 0.92; letter-spacing: -.04em; margin: 0; font-variation-settings: '"SOFT"' 50, '"WONK"' 1; }
 .headline .it { font-style: italic; color: var(--accent); font-weight: 300; }
-
-.sub {
-  font-family: 'Newsreader', serif;
-  font-size: clamp(18px, 2vw, 22px); line-height: 1.5;
-  max-width: 540px;
-  margin-top: 40px;
-  color: var(--ink-soft);
-  font-weight: 300;
-}
-
+.sub { font-family: 'Newsreader', serif; font-size: clamp(18px, 2vw, 22px); line-height: 1.5; max-width: 540px; margin-top: 40px; color: var(--ink-soft); font-weight: 300; }
 .cta-row { display: flex; gap: 14px; margin-top: 36px; align-items: center; flex-wrap: wrap; font-family: 'Inter', sans-serif; }
-.btn-primary {
-  background: var(--ink); color: var(--cream);
-  padding: 16px 26px; border-radius: 999px;
-  font-size: 14px; font-weight: 500;
-  display: inline-flex; gap: 10px; align-items: center;
-  border: none; cursor: pointer;
-  transition: transform .15s;
-}
+.btn-primary { background: var(--ink); color: var(--cream); padding: 16px 26px; border-radius: 999px; font-size: 14px; font-weight: 500; display: inline-flex; gap: 10px; align-items: center; border: none; cursor: pointer; transition: transform .15s; }
 .btn-primary:hover { transform: translateY(-1px); opacity: 1; }
-.btn-secondary {
-  padding: 16px 0; font-size: 14px; font-weight: 500;
-  border-bottom: 1px solid var(--ink);
-  border-radius: 0;
-  font-family: 'Inter', sans-serif;
-}
+.btn-secondary { padding: 16px 0; font-size: 14px; font-weight: 500; border-bottom: 1px solid var(--ink); border-radius: 0; font-family: 'Inter', sans-serif; }
+.trust-row { margin-top: 56px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-mute); display: flex; gap: 28px; flex-wrap: wrap; }
 
-.trust-row {
-  margin-top: 56px;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--ink-mute);
-  display: flex; gap: 28px; flex-wrap: wrap;
-}
-
-/* Bear card */
 .bear-card-wrap { position: relative; }
-.bear-card {
-  background: var(--paper);
-  border-radius: 8px;
-  padding: 40px;
-  box-shadow: 0 30px 60px -20px rgba(31,22,17,.18), 0 0 0 1px rgba(31,22,17,.04);
-  transform: rotate(-2deg);
-  position: relative;
-}
+.bear-card { background: var(--paper); border-radius: 8px; padding: 40px; box-shadow: 0 30px 60px -20px rgba(31,22,17,.18), 0 0 0 1px rgba(31,22,17,.04); transform: rotate(-2deg); position: relative; }
 .bear-card .plate-label { color: var(--accent); margin-bottom: 16px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
-.bear-card .quote {
-  margin-top: 24px;
-  font-family: 'Newsreader', serif; font-style: italic;
-  font-size: 18px; color: var(--ink-mute); text-align: center;
-}
-.bear-card .quote .who {
-  font-family: 'DM Mono', monospace; font-style: normal;
-  font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
-  margin-top: 8px; opacity: .6;
-}
+.bear-card .quote { margin-top: 24px; font-family: 'Newsreader', serif; font-style: italic; font-size: 18px; color: var(--ink-mute); text-align: center; }
+.bear-card .quote .who { font-family: 'DM Mono', monospace; font-style: normal; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; margin-top: 8px; opacity: .6; }
 
-.rec-badge {
-  position: absolute; top: -20px; right: -10px;
-  background: var(--ink); color: var(--cream);
-  padding: 12px 16px; border-radius: 999px;
-  font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
-  display: flex; align-items: center; gap: 10px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.18);
-  transform: rotate(4deg);
-}
-.rec-badge .dot {
-  width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
-  animation: pulse 1.6s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(194,84,42,.5); }
-  50% { opacity: .6; box-shadow: 0 0 0 6px rgba(194,84,42,0); }
-}
+.rec-badge { position: absolute; top: -20px; right: -10px; background: var(--ink); color: var(--cream); padding: 12px 16px; border-radius: 999px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 10px; box-shadow: 0 12px 30px rgba(0,0,0,.18); transform: rotate(4deg); }
+.rec-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: pulse 1.6s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(194,84,42,.5); } 50% { opacity: .6; box-shadow: 0 0 0 6px rgba(194,84,42,0); } }
 
-.sticky-note {
-  position: absolute; bottom: -30px; left: -30px;
-  background: #F4D58A;
-  padding: 14px 18px;
-  font-family: 'Newsreader', serif; font-style: italic;
-  font-size: 16px; color: var(--ink);
-  transform: rotate(-6deg);
-  box-shadow: 0 12px 30px rgba(0,0,0,.12);
-  max-width: 220px; line-height: 1.4;
-}
-.sticky-note .who {
-  font-size: 11px; font-style: normal; margin-top: 8px; opacity: .7;
-  font-family: 'DM Mono', monospace; letter-spacing: .15em; text-transform: uppercase;
-}
+.sticky-note { position: absolute; bottom: -30px; left: -30px; background: #F4D58A; padding: 14px 18px; font-family: 'Newsreader', serif; font-style: italic; font-size: 16px; color: var(--ink); transform: rotate(-6deg); box-shadow: 0 12px 30px rgba(0,0,0,.12); max-width: 220px; line-height: 1.4; }
+.sticky-note .who { font-size: 11px; font-style: normal; margin-top: 8px; opacity: .7; font-family: 'DM Mono', monospace; letter-spacing: .15em; text-transform: uppercase; }
+@media (max-width: 600px) { .bear-card { padding: 28px; transform: rotate(-1deg); } .rec-badge { right: 10px; top: -16px; } .sticky-note { left: 0; bottom: -16px; max-width: 180px; } }
 
-@media (max-width: 600px) {
-  .bear-card { padding: 28px; transform: rotate(-1deg); }
-  .rec-badge { right: 10px; top: -16px; }
-  .sticky-note { left: 0; bottom: -16px; max-width: 180px; }
-}
-
-/* SECTION */
 section.section { padding: 80px 48px; max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
 @media (max-width: 720px) { section.section { padding: 56px 24px; } }
+section.section h2.section-title { font-family: 'Fraunces', serif; font-size: clamp(36px, 5vw, 72px); font-weight: 300; line-height: .95; letter-spacing: -.03em; margin: 16px 0 60px; max-width: 900px; }
 
-section.section h2.section-title {
-  font-family: 'Fraunces', serif; font-size: clamp(36px, 5vw, 72px);
-  font-weight: 300; line-height: .95; letter-spacing: -.03em;
-  margin: 16px 0 60px; max-width: 900px;
-}
-
-/* Features grid */
-.features {
-  display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px;
-}
+.features { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
 @media (max-width: 900px) { .features { grid-template-columns: 1fr; } }
-.card {
-  background: var(--paper);
-  border-radius: 8px;
-  padding: 40px;
-  box-shadow: 0 20px 50px -25px rgba(31,22,17,.15);
-  position: relative;
-  overflow: hidden;
-}
+.card { background: var(--paper); border-radius: 8px; padding: 40px; box-shadow: 0 20px 50px -25px rgba(31,22,17,.15); position: relative; overflow: hidden; }
 .card.span-7 { grid-column: span 7; min-height: 420px; }
 .card.span-5 { grid-column: span 5; min-height: 200px; }
 .card.dark { background: var(--ink); color: var(--cream); }
 .card.deep { background: var(--cream-deep); }
-@media (max-width: 900px) {
-  .card.span-7, .card.span-5 { grid-column: span 1; min-height: auto; }
-}
-
+@media (max-width: 900px) { .card.span-7, .card.span-5 { grid-column: span 1; min-height: auto; } }
 .card-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; }
 .card.dark .card-num { color: var(--gold); }
 .card-plate { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: #8A6A55; }
@@ -255,29 +100,13 @@ section.section h2.section-title {
 .card p { font-family: 'Newsreader', serif; font-weight: 300; line-height: 1.5; color: var(--ink-soft); margin-top: 14px; }
 .card.dark p { color: rgba(247, 239, 226, .8); }
 
-/* Recording controls in big card */
-.rec-controls {
-  position: absolute; bottom: 32px; left: 40px; right: 40px;
-  display: flex; align-items: center; gap: 16px;
-}
-.rec-button {
-  background: var(--accent); color: #fff;
-  width: 56px; height: 56px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 10px 24px rgba(194,84,42,.4);
-  flex-shrink: 0;
-}
-.rec-button .dot {
-  width: 10px; height: 10px; border-radius: 50%; background: #fff;
-}
+.rec-controls { position: absolute; bottom: 32px; left: 40px; right: 40px; display: flex; align-items: center; gap: 16px; }
+.rec-button { background: var(--accent); color: #fff; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(194,84,42,.4); flex-shrink: 0; }
+.rec-button .dot { width: 10px; height: 10px; border-radius: 50%; background: #fff; }
 .waveform { flex: 1; display: flex; align-items: center; gap: 3px; height: 36px; }
-.waveform .bar {
-  width: 3px; background: var(--accent); border-radius: 3px;
-  animation: wfPulse 1.4s ease-in-out infinite alternate;
-}
+.waveform .bar { width: 3px; background: var(--accent); border-radius: 3px; animation: wfPulse 1.4s ease-in-out infinite alternate; }
 @keyframes wfPulse { 0% { transform: scaleY(.4); } 100% { transform: scaleY(1.1); } }
 
-/* Price block in engangskjøp-card */
 .price-block { text-align: right; font-family: 'Fraunces', serif; flex-shrink: 0; }
 .price-block .above { font-size: 11px; font-family: 'DM Mono', monospace; letter-spacing: .2em; text-transform: uppercase; color: #8A6A55; }
 .price-block .price { font-size: clamp(48px, 6vw, 64px); font-weight: 300; letter-spacing: -.03em; line-height: 1; margin: 4px 0; }
@@ -285,87 +114,44 @@ section.section h2.section-title {
 .flex-card { display: flex; align-items: center; gap: 32px; }
 @media (max-width: 600px) { .flex-card { flex-direction: column; align-items: flex-start; } .price-block { text-align: left; } }
 
-/* Screenshots */
 .screenshots-row { display: flex; gap: 20px; overflow-x: auto; padding: 8px 4px 24px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
 .screenshots-row::-webkit-scrollbar { height: 8px; }
 .screenshots-row::-webkit-scrollbar-track { background: rgba(31,22,17,.05); border-radius: 4px; }
 .screenshots-row::-webkit-scrollbar-thumb { background: rgba(31,22,17,.2); border-radius: 4px; }
 .screenshots-row img { width: 260px; flex-shrink: 0; border-radius: 28px; box-shadow: 0 30px 60px -20px rgba(31,22,17,.25); scroll-snap-align: center; }
 
-/* Pull quote */
 section.pull { padding: 120px 48px; max-width: 1100px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
 .bears-row { display: flex; justify-content: center; gap: 8px; margin-bottom: 32px; }
-blockquote.pull-quote {
-  font-family: 'Fraunces', serif; font-size: clamp(28px, 5vw, 56px);
-  font-weight: 300; font-style: italic; line-height: 1.15;
-  letter-spacing: -.02em; margin: 0; color: var(--ink);
-  font-variation-settings: '"SOFT"' 100;
-}
+blockquote.pull-quote { font-family: 'Fraunces', serif; font-size: clamp(28px, 5vw, 56px); font-weight: 300; font-style: italic; line-height: 1.15; letter-spacing: -.02em; margin: 0; color: var(--ink); font-variation-settings: '"SOFT"' 100; }
 blockquote.pull-quote .accent { color: var(--accent); }
 .pull-attribution { margin-top: 32px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--ink-mute); }
 
-/* Steps */
 .steps-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; position: relative; }
 @media (max-width: 720px) { .steps-grid { grid-template-columns: 1fr; gap: 32px; } }
-.steps-grid::before {
-  content: '';
-  position: absolute; top: 36px; left: 16%; right: 16%; height: 1px;
-  background: repeating-linear-gradient(90deg, rgba(31,22,17,.25) 0 8px, transparent 8px 16px);
-}
+.steps-grid::before { content: ''; position: absolute; top: 36px; left: 16%; right: 16%; height: 1px; background: repeating-linear-gradient(90deg, rgba(31,22,17,.25) 0 8px, transparent 8px 16px); }
 @media (max-width: 720px) { .steps-grid::before { display: none; } }
 .step { padding: 0 32px; text-align: center; position: relative; z-index: 1; }
-.step-num {
-  width: 72px; height: 72px; border-radius: 50%;
-  background: var(--paper); border: 1px solid var(--ink);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 24px;
-  font-family: 'Fraunces', serif; font-size: 24px; font-style: italic;
-}
+.step-num { width: 72px; height: 72px; border-radius: 50%; background: var(--paper); border: 1px solid var(--ink); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-family: 'Fraunces', serif; font-size: 24px; font-style: italic; }
 .step h3 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 400; letter-spacing: -.02em; margin: 0 0 12px; }
 .step p { font-family: 'Newsreader', serif; font-size: 17px; line-height: 1.55; color: var(--ink-soft); max-width: 280px; margin: 0 auto; font-weight: 300; }
 
-/* Tester section */
-section.tester {
-  background: var(--ink); color: var(--cream);
-  padding: 80px 48px; margin-top: 60px;
-  position: relative; z-index: 1;
-}
+section.tester { background: var(--ink); color: var(--cream); padding: 80px 48px; margin-top: 60px; position: relative; z-index: 1; }
 section.tester .grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: start; }
 @media (max-width: 900px) { section.tester .grid { grid-template-columns: 1fr; gap: 40px; } }
 section.tester .gold { color: var(--gold); }
-section.tester h2 {
-  font-family: 'Fraunces', serif; font-size: clamp(40px, 5vw, 80px);
-  font-weight: 300; line-height: .95; letter-spacing: -.03em; margin: 0 0 24px;
-}
+section.tester h2 { font-family: 'Fraunces', serif; font-size: clamp(40px, 5vw, 80px); font-weight: 300; line-height: .95; letter-spacing: -.03em; margin: 0 0 24px; }
 section.tester h2 .it { font-style: italic; color: var(--gold); }
-section.tester p {
-  font-family: 'Newsreader', serif; font-size: 20px; line-height: 1.5;
-  opacity: .8; max-width: 520px; font-weight: 300;
-}
-.form-card {
-  background: var(--cream); color: var(--ink);
-  border-radius: 8px; padding: 32px;
-}
+section.tester p { font-family: 'Newsreader', serif; font-size: 20px; line-height: 1.5; opacity: .8; max-width: 520px; font-weight: 300; }
+.form-card { background: var(--cream); color: var(--ink); border-radius: 8px; padding: 32px; }
 .form-card form { display: grid; gap: 14px; font-family: 'Inter', sans-serif; }
 .form-card label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 4px; display: block; }
-.form-card input, .form-card select, .form-card textarea {
-  width: 100%; font-family: 'Newsreader', serif; font-size: 16px;
-  padding: 12px 14px; border: 1px solid rgba(31,22,17,.15); border-radius: 4px;
-  background: var(--paper); color: var(--ink);
-}
+.form-card input, .form-card select, .form-card textarea { width: 100%; font-family: 'Newsreader', serif; font-size: 16px; padding: 12px 14px; border: 1px solid rgba(31,22,17,.15); border-radius: 4px; background: var(--paper); color: var(--ink); }
 .form-card input:focus, .form-card select:focus, .form-card textarea:focus { outline: none; border-color: var(--accent); }
 .form-card textarea { min-height: 80px; resize: vertical; }
-.form-card .submit {
-  background: var(--accent); color: #fff;
-  padding: 14px 22px; border-radius: 999px; border: none;
-  font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500;
-  cursor: pointer; margin-top: 4px;
-  display: inline-flex; align-items: center; gap: 10px; justify-content: center;
-}
+.form-card .submit { background: var(--accent); color: #fff; padding: 14px 22px; border-radius: 999px; border: none; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; margin-top: 4px; display: inline-flex; align-items: center; gap: 10px; justify-content: center; }
 .form-card .submit:hover { background: var(--accent-dark); }
 .form-card .note { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--ink-mute); text-align: center; margin-top: 4px; }
 
-/* FAQ */
 details.faq { background: var(--paper); border-radius: 8px; padding: 24px 28px; margin-bottom: 12px; border: 1px solid rgba(31,22,17,.06); }
 details.faq summary { cursor: pointer; font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400; list-style: none; position: relative; padding-right: 32px; letter-spacing: -.01em; }
 details.faq summary::-webkit-details-marker { display: none; }
@@ -373,120 +159,78 @@ details.faq summary::after { content: "+"; position: absolute; right: 0; top: -4
 details.faq[open] summary::after { content: "−"; }
 details.faq p { font-family: 'Newsreader', serif; font-size: 16px; line-height: 1.55; color: var(--ink-soft); margin: 16px 0 0; font-weight: 300; }
 
-/* Footer */
-footer.site {
-  padding: 40px 48px; display: flex; justify-content: space-between;
-  font-family: 'DM Mono', monospace; font-size: 11px;
-  letter-spacing: .2em; text-transform: uppercase; color: var(--ink-mute);
-  flex-wrap: wrap; gap: 16px;
-  position: relative; z-index: 1;
-}
+footer.site { padding: 40px 48px; display: flex; justify-content: space-between; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-mute); flex-wrap: wrap; gap: 16px; position: relative; z-index: 1; }
 footer.site .links { display: flex; gap: 24px; }
 @media (max-width: 600px) { footer.site { padding: 32px 24px; flex-direction: column; gap: 16px; } }
 </style>
 </head>
 <body>
 
-<!-- Bumle Bear SVG (genbrukbar) -->
 <svg width="0" height="0" style="position: absolute" aria-hidden="true">
 <defs>
 <symbol id="bear-paper" viewBox="0 0 200 200">
-  <ellipse cx="52" cy="54" rx="22" ry="22" fill="#D9A574"/>
-  <ellipse cx="148" cy="54" rx="22" ry="22" fill="#D9A574"/>
-  <ellipse cx="52" cy="56" rx="11" ry="11" fill="#A87142" opacity=".55"/>
-  <ellipse cx="148" cy="56" rx="11" ry="11" fill="#A87142" opacity=".55"/>
-  <ellipse cx="100" cy="100" rx="68" ry="62" fill="#D9A574"/>
-  <ellipse cx="100" cy="120" rx="38" ry="30" fill="#F5E9D2"/>
-  <ellipse cx="58" cy="118" rx="11" ry="7" fill="#E8A48A" opacity=".55"/>
-  <ellipse cx="142" cy="118" rx="11" ry="7" fill="#E8A48A" opacity=".55"/>
-  <ellipse cx="78" cy="92" rx="6" ry="7.5" fill="#1F1410"/>
-  <ellipse cx="122" cy="92" rx="6" ry="7.5" fill="#1F1410"/>
-  <circle cx="80" cy="89" r="1.8" fill="#fff"/>
-  <circle cx="124" cy="89" r="1.8" fill="#fff"/>
+  <ellipse cx="52" cy="54" rx="22" ry="22" fill="#D9A574"/><ellipse cx="148" cy="54" rx="22" ry="22" fill="#D9A574"/>
+  <ellipse cx="52" cy="56" rx="11" ry="11" fill="#A87142" opacity=".55"/><ellipse cx="148" cy="56" rx="11" ry="11" fill="#A87142" opacity=".55"/>
+  <ellipse cx="100" cy="100" rx="68" ry="62" fill="#D9A574"/><ellipse cx="100" cy="120" rx="38" ry="30" fill="#F5E9D2"/>
+  <ellipse cx="58" cy="118" rx="11" ry="7" fill="#E8A48A" opacity=".55"/><ellipse cx="142" cy="118" rx="11" ry="7" fill="#E8A48A" opacity=".55"/>
+  <ellipse cx="78" cy="92" rx="6" ry="7.5" fill="#1F1410"/><ellipse cx="122" cy="92" rx="6" ry="7.5" fill="#1F1410"/>
+  <circle cx="80" cy="89" r="1.8" fill="#fff"/><circle cx="124" cy="89" r="1.8" fill="#fff"/>
   <ellipse cx="100" cy="112" rx="9" ry="6.5" fill="#2A1A10"/>
   <path d="M100 118 Q100 126 92 128" fill="none" stroke="#2A1A10" stroke-width="2.2" stroke-linecap="round"/>
   <path d="M100 118 Q100 126 108 128" fill="none" stroke="#2A1A10" stroke-width="2.2" stroke-linecap="round"/>
   <path d="M88 130 Q100 138 112 130" fill="none" stroke="#2A1A10" stroke-width="2.4" stroke-linecap="round"/>
 </symbol>
 <symbol id="bear-warm" viewBox="0 0 200 200">
-  <ellipse cx="52" cy="54" rx="22" ry="22" fill="#E8A45C"/>
-  <ellipse cx="148" cy="54" rx="22" ry="22" fill="#E8A45C"/>
-  <ellipse cx="52" cy="56" rx="11" ry="11" fill="#C97D38" opacity=".55"/>
-  <ellipse cx="148" cy="56" rx="11" ry="11" fill="#C97D38" opacity=".55"/>
-  <ellipse cx="100" cy="100" rx="68" ry="62" fill="#E8A45C"/>
-  <ellipse cx="100" cy="120" rx="38" ry="30" fill="#FBE5C8"/>
-  <ellipse cx="58" cy="118" rx="11" ry="7" fill="#F4B89A" opacity=".55"/>
-  <ellipse cx="142" cy="118" rx="11" ry="7" fill="#F4B89A" opacity=".55"/>
-  <ellipse cx="78" cy="92" rx="6" ry="7.5" fill="#2A1A10"/>
-  <ellipse cx="122" cy="92" rx="6" ry="7.5" fill="#2A1A10"/>
-  <circle cx="80" cy="89" r="1.8" fill="#fff"/>
-  <circle cx="124" cy="89" r="1.8" fill="#fff"/>
+  <ellipse cx="52" cy="54" rx="22" ry="22" fill="#E8A45C"/><ellipse cx="148" cy="54" rx="22" ry="22" fill="#E8A45C"/>
+  <ellipse cx="100" cy="100" rx="68" ry="62" fill="#E8A45C"/><ellipse cx="100" cy="120" rx="38" ry="30" fill="#FBE5C8"/>
+  <ellipse cx="78" cy="92" rx="6" ry="7.5" fill="#2A1A10"/><ellipse cx="122" cy="92" rx="6" ry="7.5" fill="#2A1A10"/>
+  <circle cx="80" cy="89" r="1.8" fill="#fff"/><circle cx="124" cy="89" r="1.8" fill="#fff"/>
   <ellipse cx="100" cy="112" rx="9" ry="6.5" fill="#3D2418"/>
-  <path d="M100 118 Q100 126 92 128" fill="none" stroke="#3D2418" stroke-width="2.2" stroke-linecap="round"/>
-  <path d="M100 118 Q100 126 108 128" fill="none" stroke="#3D2418" stroke-width="2.2" stroke-linecap="round"/>
   <path d="M88 130 Q100 138 112 130" fill="none" stroke="#3D2418" stroke-width="2.4" stroke-linecap="round"/>
 </symbol>
 <symbol id="bear-pastel" viewBox="0 0 200 200">
-  <ellipse cx="52" cy="54" rx="22" ry="22" fill="#F2C9A0"/>
-  <ellipse cx="148" cy="54" rx="22" ry="22" fill="#F2C9A0"/>
-  <ellipse cx="100" cy="100" rx="68" ry="62" fill="#F2C9A0"/>
-  <ellipse cx="100" cy="120" rx="38" ry="30" fill="#FFF1E0"/>
-  <ellipse cx="58" cy="118" rx="11" ry="7" fill="#FFB8A8" opacity=".55"/>
-  <ellipse cx="142" cy="118" rx="11" ry="7" fill="#FFB8A8" opacity=".55"/>
-  <ellipse cx="78" cy="92" rx="6" ry="7.5" fill="#2A1A10"/>
-  <ellipse cx="122" cy="92" rx="6" ry="7.5" fill="#2A1A10"/>
-  <circle cx="80" cy="89" r="1.8" fill="#fff"/>
-  <circle cx="124" cy="89" r="1.8" fill="#fff"/>
+  <ellipse cx="52" cy="54" rx="22" ry="22" fill="#F2C9A0"/><ellipse cx="148" cy="54" rx="22" ry="22" fill="#F2C9A0"/>
+  <ellipse cx="100" cy="100" rx="68" ry="62" fill="#F2C9A0"/><ellipse cx="100" cy="120" rx="38" ry="30" fill="#FFF1E0"/>
+  <ellipse cx="78" cy="92" rx="6" ry="7.5" fill="#2A1A10"/><ellipse cx="122" cy="92" rx="6" ry="7.5" fill="#2A1A10"/>
+  <circle cx="80" cy="89" r="1.8" fill="#fff"/><circle cx="124" cy="89" r="1.8" fill="#fff"/>
   <ellipse cx="100" cy="112" rx="9" ry="6.5" fill="#3D2418"/>
-  <path d="M100 118 Q100 126 92 128" fill="none" stroke="#3D2418" stroke-width="2.2" stroke-linecap="round"/>
-  <path d="M100 118 Q100 126 108 128" fill="none" stroke="#3D2418" stroke-width="2.2" stroke-linecap="round"/>
   <path d="M88 130 Q100 138 112 130" fill="none" stroke="#3D2418" stroke-width="2.4" stroke-linecap="round"/>
 </symbol>
 <symbol id="bear-cream" viewBox="0 0 200 200">
-  <ellipse cx="52" cy="54" rx="22" ry="22" fill="#F0D9B5"/>
-  <ellipse cx="148" cy="54" rx="22" ry="22" fill="#F0D9B5"/>
-  <ellipse cx="100" cy="100" rx="68" ry="62" fill="#F0D9B5"/>
-  <ellipse cx="100" cy="120" rx="38" ry="30" fill="#FFF6E5"/>
-  <ellipse cx="58" cy="118" rx="11" ry="7" fill="#F2A98F" opacity=".55"/>
-  <ellipse cx="142" cy="118" rx="11" ry="7" fill="#F2A98F" opacity=".55"/>
-  <ellipse cx="78" cy="92" rx="6" ry="7.5" fill="#2A1A10"/>
-  <ellipse cx="122" cy="92" rx="6" ry="7.5" fill="#2A1A10"/>
-  <circle cx="80" cy="89" r="1.8" fill="#fff"/>
-  <circle cx="124" cy="89" r="1.8" fill="#fff"/>
+  <ellipse cx="52" cy="54" rx="22" ry="22" fill="#F0D9B5"/><ellipse cx="148" cy="54" rx="22" ry="22" fill="#F0D9B5"/>
+  <ellipse cx="100" cy="100" rx="68" ry="62" fill="#F0D9B5"/><ellipse cx="100" cy="120" rx="38" ry="30" fill="#FFF6E5"/>
+  <ellipse cx="78" cy="92" rx="6" ry="7.5" fill="#2A1A10"/><ellipse cx="122" cy="92" rx="6" ry="7.5" fill="#2A1A10"/>
+  <circle cx="80" cy="89" r="1.8" fill="#fff"/><circle cx="124" cy="89" r="1.8" fill="#fff"/>
   <ellipse cx="100" cy="112" rx="9" ry="6.5" fill="#3D2418"/>
-  <path d="M100 118 Q100 126 92 128" fill="none" stroke="#3D2418" stroke-width="2.2" stroke-linecap="round"/>
-  <path d="M100 118 Q100 126 108 128" fill="none" stroke="#3D2418" stroke-width="2.2" stroke-linecap="round"/>
   <path d="M88 130 Q100 138 112 130" fill="none" stroke="#3D2418" stroke-width="2.4" stroke-linecap="round"/>
 </symbol>
 </defs>
 </svg>
 
-<!-- NAV -->
 <nav class="site">
-  <a href="/" class="logo">
+  <a href="/en/" class="logo">
     <svg><use href="#bear-paper"/></svg>
     <span>Bumle</span>
   </a>
   <div class="links">
-    <a href="#funksjoner">Funksjoner</a>
-    <a href="#fagpersoner">For logopeder</a>
-    <a href="#tester">Bli tester</a>
+    <a href="#features">Features</a>
+    <a href="#professionals">For therapists</a>
+    <a href="#tester">Become a tester</a>
   </div>
   <div class="right">
     <div class="lang-switch">
-      <a href="/" class="active" title="Norsk">🇳🇴</a>
-      <a href="/en/" title="English">🇬🇧</a>
+      <a href="/" title="Norsk">🇳🇴</a>
+      <a href="/en/" class="active" title="English">🇬🇧</a>
     </div>
-    <a href="https://apps.apple.com/no/app/bumle-bj%C3%B8rn-learn-words/id6761500591" class="cta">Last ned</a>
+    <a href="https://apps.apple.com/app/id6761500591" class="cta">Download</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="issue">
-    <span>Kapittel ett</span>
+    <span>Chapter one</span>
     <span class="line"></span>
-    <span>Bumle Bjørn · for små stemmer</span>
+    <span>Bumle Bjørn · for small voices</span>
     <span class="line"></span>
     <span>Vol. 02 / 2026</span>
   </div>
@@ -494,75 +238,73 @@ footer.site .links { display: flex; gap: 24px; }
   <div class="hero-grid">
     <div>
       <h1 class="headline">
-        Mammas<br>
-        <span class="it">stemme,</span><br>
-        ikke en robot.
+        Mum's<br>
+        <span class="it">voice,</span><br>
+        not a robot.
       </h1>
       <p class="sub">
-        En liten app som lærer barn ord, fortalt med stemmene de er glad i.
-        Bestemor i Tromsø spiller inn dialekten sin, barnebarnet i Oslo hører
-        henne hver kveld før leggetid.
+        A little app that teaches children words, told in the voices they love.
+        Grandma in Tromsø records her dialect, the grandchild in Oslo hears
+        her every night before bed.
       </p>
       <div class="cta-row">
-        <a href="https://apps.apple.com/no/app/bumle-bj%C3%B8rn-learn-words/id6761500591" class="btn-primary">
-          Last ned for iPhone
+        <a href="https://apps.apple.com/app/id6761500591" class="btn-primary">
+          Download for iPhone
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="#tester" class="btn-secondary">Søk om gratis tilgang</a>
+        <a href="#tester" class="btn-secondary">Apply for free access</a>
       </div>
 
       <div class="trust-row">
-        <span>Kids Category-godkjent</span>
-        <span>9 språk</span>
-        <span>Engangskjøp</span>
-        <span>Ingen reklame</span>
+        <span>Kids Category-approved</span>
+        <span>9 languages</span>
+        <span>One-time purchase</span>
+        <span>No ads</span>
       </div>
     </div>
 
-    <!-- Big bear card -->
     <div class="bear-card-wrap">
       <div class="bear-card">
-        <div class="plate-label">Plate I · Hovedstemme</div>
+        <div class="plate-label">Plate I · Main voice</div>
         <svg style="width: 100%; max-width: 320px; height: auto; display: block; margin: 0 auto;"><use href="#bear-paper"/></svg>
         <div class="quote">
-          "Det er bestemor!"
-          <div class="who">· Synne, 4 år</div>
+          "It's grandma!"
+          <div class="who">· Synne, age 4</div>
         </div>
       </div>
 
       <div class="rec-badge">
         <span class="dot"></span>
-        Trykk for å snakke
+        Tap to talk
       </div>
 
       <div class="sticky-note">
-        "Ho hørte stemmen min<br>og lo. Det er hele appen."
-        <div class="who">· Pappa Jonas</div>
+        "She heard my voice<br>and laughed. That's the whole app."
+        <div class="who">· Dad Jonas</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section class="section" id="funksjoner">
-  <div class="label">§ Funksjoner</div>
+<section class="section" id="features">
+  <div class="label">§ Features</div>
   <h2 class="section-title">
-    Sju spillmoduser. Tjueén kategorier.<br>
-    <span class="italic">Én stemme</span> som er din.
+    Seven game modes. Twenty-one categories.<br>
+    <span class="italic">One voice</span> that's yours.
   </h2>
 
   <div class="features">
     <article class="card span-7">
       <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-        <div class="card-num">01 · Stemmeopptak</div>
+        <div class="card-num">01 · Voice recording</div>
         <div class="card-plate">Plate II</div>
       </div>
       <h3 style="font-size: clamp(32px, 4vw, 44px); margin: 60px 0 16px; font-style: italic;">
-        "Ka heter denne?"
+        "What's this called?"
       </h3>
       <p style="font-size: 18px; max-width: 420px;">
-        Hver kategori, hvert kort, hver oppmuntring kan ha din stemme.
-        Mamma, pappa, bestemor, eller logopeden som lærer barnet å si "rød".
+        Every category, every card, every word of encouragement can have your voice.
+        Mum, dad, grandma, or the speech therapist teaching the child to say "red".
       </p>
       <div class="rec-controls">
         <div class="rec-button"><span class="dot"></span></div>
@@ -574,60 +316,58 @@ footer.site .links { display: flex; gap: 24px; }
     <article class="card span-5 dark">
       <div class="card-num">02 · .bumlepack</div>
       <h3 style="font-size: clamp(28px, 3.5vw, 36px); margin: 0 0 14px; font-style: italic;">
-        Send dialekten din.
+        Send your dialect.
       </h3>
       <p style="font-size: 16px;">
-        Pakk alle opptak i én fil. AirDrop, e-post, iMessage. Bestemor sender det selv.
+        Pack all recordings in one file. AirDrop, email, iMessage. Grandma sends it herself.
       </p>
     </article>
 
     <article class="card span-5 deep">
-      <div class="card-num">03 · Privat som dagbok</div>
+      <div class="card-num">03 · Private as a diary</div>
       <h3 style="font-size: clamp(24px, 3vw, 32px); margin: 0 0 14px;">
-        Ingenting forlater telefonen.
+        Nothing leaves the phone.
       </h3>
       <p style="font-size: 15px;">
-        Ingen reklame. Ingen tredjeparts-SDK. Lokalt kryptert. Kids-godkjent.
+        No ads. No third-party SDKs. Locally encrypted. Kids-approved.
       </p>
     </article>
 
     <article class="card span-7 flex-card">
       <div style="flex: 1;">
-        <div class="card-num">04 · Engangskjøp</div>
+        <div class="card-num">04 · One-time purchase</div>
         <h3 style="font-size: clamp(24px, 3vw, 32px); margin: 0 0 12px;">
-          Eier for alltid.<br>
-          <span class="italic">Ikke et abonnement.</span>
+          Own forever.<br>
+          <span class="italic">Not a subscription.</span>
         </h3>
         <p style="font-size: 15px;">
-          Betal én gang. Bumle+ låser opp alt. Som å kjøpe en bok, du tar den med deg hjem.
+          Pay once. Bumle+ unlocks everything. Like buying a book, you take it home.
         </p>
       </div>
       <div class="price-block">
         <div class="above">Bumle+</div>
-        <div class="price">49,–</div>
-        <div class="below">Én gang. Aldri mer.</div>
+        <div class="price">$5</div>
+        <div class="below">Once. Never again.</div>
       </div>
     </article>
   </div>
 </section>
 
-<!-- SCREENSHOTS -->
 <section class="section">
-  <div class="label">§ Slik ser det ut</div>
+  <div class="label">§ What it looks like</div>
   <h2 class="section-title">
-    Skjermbilder fra appen.<br>
-    <span class="italic">Sveip</span> for å se mer.
+    Screenshots from the app.<br>
+    <span class="italic">Swipe</span> to see more.
   </h2>
   <div class="screenshots-row">
-    <img src="screenshots/01-home.png" alt="Hovedskjerm">
-    <img src="screenshots/02-game.png" alt="Spillmodus">
-    <img src="screenshots/03-voices.png" alt="Stemmer">
-    <img src="screenshots/04-result.png" alt="Resultater">
-    <img src="screenshots/05-bear.png" alt="Bumle-bjørnen">
+    <img src="../screenshots/01-home.png" alt="Home screen">
+    <img src="../screenshots/02-game.png" alt="Game mode">
+    <img src="../screenshots/03-voices.png" alt="Voices">
+    <img src="../screenshots/04-result.png" alt="Results">
+    <img src="../screenshots/05-bear.png" alt="The Bumle bear">
   </div>
 </section>
 
-<!-- PULL QUOTE -->
 <section class="pull">
   <div class="bears-row">
     <svg width="44" height="44"><use href="#bear-warm"/></svg>
@@ -637,169 +377,163 @@ footer.site .links { display: flex; gap: 24px; }
     <svg width="44" height="44"><use href="#bear-paper"/></svg>
   </div>
   <blockquote class="pull-quote">
-    "Det startet som et lite prosjekt for å hjelpe Synne å lære ord.
-    <span class="accent">Nå håper jeg det kan hjelpe ditt barn også.</span>"
+    "It started as a small project to help Synne learn words.
+    <span class="accent">Now I hope it can help your child too.</span>"
   </blockquote>
-  <div class="pull-attribution">· Jonas Haug, utvikler · Pappa</div>
+  <div class="pull-attribution">· Jonas Haug, builder · Dad</div>
 </section>
 
-<!-- AUDIENCE / PROFESSIONALS -->
-<section class="section" id="fagpersoner">
-  <div class="label">§ Også for fagpersoner</div>
+<section class="section" id="professionals">
+  <div class="label">§ Also for professionals</div>
   <h2 class="section-title">
-    Logopeden, læreren,<br>
-    <span class="italic">pedagogen.</span>
+    The speech therapist, the teacher,<br>
+    <span class="italic">the educator.</span>
   </h2>
 
   <div class="features">
     <article class="card span-7">
-      <div class="card-num">For foreldre og familie</div>
+      <div class="card-num">For parents and family</div>
       <h3 style="font-size: clamp(28px, 3.5vw, 36px); margin: 16px 0 14px;">
-        Fra bestemors hus<br>
-        til soverommet.
+        From grandma's house<br>
+        to the bedroom.
       </h3>
       <p style="font-size: 17px;">
-        For barn 1 til 8 år som lærer ord, og for tospråklige familier som vil ha begge dialekter. Sju spillmoduser, fra utforskning til memory og telling. Trygt for barn: ingen reklame, ingen lenker ut.
+        For children ages 1 to 8 learning words, and for bilingual families who want both dialects. Seven game modes, from exploration to memory and counting. Safe for kids: no ads, no external links.
       </p>
     </article>
 
     <article class="card span-5" style="background: linear-gradient(160deg, #FCE8D2 0%, #FFF1DD 100%);">
-      <div class="card-num">For logopeder</div>
+      <div class="card-num">For speech therapists</div>
       <h3 style="font-size: clamp(24px, 3vw, 32px); margin: 16px 0 14px; font-style: italic;">
-        Send pasienten<br>din uttale.
+        Send your patient<br>your pronunciation.
       </h3>
       <p style="font-size: 15px;">
-        Spill inn artikulasjon, dialekt eller lydkombinasjoner. Eksporter som .bumlepack-fil, send via e-post. Pasienten får din uttale rett inn i appen, hjemme mellom timene.
+        Record articulation, dialect or phonetic combinations. Export as .bumlepack file, send via email. The patient gets your pronunciation right in the app, at home between sessions.
       </p>
     </article>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section class="section">
-  <div class="label">§ Slik fungerer en lyd-pakke</div>
+  <div class="label">§ How a voice package works</div>
   <h2 class="section-title" style="font-style: italic;">
-    Fem minutter, fra logoped<br>til kjøkkenbord.
+    Five minutes, from therapist<br>to the kitchen table.
   </h2>
 
   <div class="steps-grid">
     <div class="step">
       <div class="step-num">01</div>
-      <h3>Spill inn</h3>
-      <p>Velg kortene du jobber med, og spill inn artikulasjonen direkte i appen.</p>
+      <h3>Record</h3>
+      <p>Pick the cards you are working with, and record your articulation directly in the app.</p>
     </div>
     <div class="step">
       <div class="step-num">02</div>
-      <h3>Pakk</h3>
-      <p>Tap "Del pakke". Alle opptak samles i én .bumlepack-fil.</p>
+      <h3>Pack</h3>
+      <p>Tap "Share package". All recordings collected in one .bumlepack file.</p>
     </div>
     <div class="step">
       <div class="step-num">03</div>
       <h3>Send</h3>
-      <p>Foreldrene tapper på fila, opptakene havner rett i deres Bumle.</p>
+      <p>Parents tap the file, recordings appear directly in their Bumle.</p>
     </div>
   </div>
 </section>
 
-<!-- TESTER CTA -->
 <section class="tester" id="tester">
   <div class="grid">
     <div>
-      <div class="label gold">§ Vi søker testere</div>
+      <div class="label gold">§ We are looking for testers</div>
       <h2>
-        Få Bumle+ <span class="it">gratis.</span>
+        Get Bumle+ <span class="it">free.</span>
       </h2>
       <p>
-        Vi leter etter foreldre, logopeder og pedagoger som vil prøve den nye lyd-pakke-funksjonen og si ærlig hva de tenker. Du får en gratis kode i bytte mot tilbakemelding.
+        We are looking for parents, speech therapists and educators who want to try the new voice-package feature and tell us honestly what they think. You get a free code in exchange for feedback.
       </p>
     </div>
     <div class="form-card">
       <form id="testerForm" onsubmit="return sendApplication(event)">
         <div>
-          <label for="name">Navn</label>
+          <label for="name">Name</label>
           <input type="text" id="name" name="name" required>
         </div>
         <div>
-          <label for="email">E-post</label>
+          <label for="email">Email</label>
           <input type="email" id="email" name="email" required>
         </div>
         <div>
-          <label for="role">Rolle</label>
+          <label for="role">Role</label>
           <select id="role" name="role" required>
-            <option value="">Velg en rolle</option>
-            <option value="Forelder">Forelder</option>
-            <option value="Logoped">Logoped</option>
-            <option value="Pedagog / barnehage">Pedagog / barnehage</option>
-            <option value="Lærer">Lærer</option>
-            <option value="Helsesøster">Helsesøster</option>
-            <option value="Annet">Annet</option>
+            <option value="">Pick a role</option>
+            <option value="Parent">Parent</option>
+            <option value="Speech therapist">Speech therapist</option>
+            <option value="Educator / preschool">Educator / preschool</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Health visitor">Health visitor</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div>
-          <label for="why">Hva vil du bruke Bumle til?</label>
-          <textarea id="why" name="why" placeholder="F.eks. «pasienter med dysleksi», «toåringen min lærer dialekt»…"></textarea>
+          <label for="why">What will you use Bumle for?</label>
+          <textarea id="why" name="why" placeholder="E.g. «patients with dyslexia», «my toddler learning a dialect»…"></textarea>
         </div>
         <button type="submit" class="submit">
-          Send søknad
+          Send application
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <p class="note">E-postklienten din åpnes med søknaden.</p>
+        <p class="note">Your email client opens with the application.</p>
       </form>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="section">
-  <div class="label">§ Spørsmål du kanskje lurer på</div>
+  <div class="label">§ Questions you might have</div>
   <h2 class="section-title">
-    Korte svar.<br>
-    <span class="italic">Det vi hører oftest.</span>
+    Short answers.<br>
+    <span class="italic">What we hear most often.</span>
   </h2>
 
   <details class="faq">
-    <summary>Koster Bumle Bjørn noe?</summary>
-    <p>Du kan laste ned gratis og bruke 2 kategorier (Dyr og Farger og former) pluss 3 spillmoduser. Bumle+ låser opp alle 21 kategorier, alle 7 spillmoduser, ubegrenset stemmeopptak og lyd-pakke-deling. Bumle+ er en engangsbetaling, ikke et abonnement.</p>
+    <summary>Does Bumle Bjørn cost anything?</summary>
+    <p>You can download for free and use 2 categories (Animals and Colors and Shapes) plus 3 game modes. Bumle+ unlocks all 21 categories, all 7 game modes, unlimited voice recordings and voice-package sharing. Bumle+ is a one-time payment, not a subscription.</p>
   </details>
   <details class="faq">
-    <summary>Er Bumle en ASK-app som Balubi?</summary>
-    <p>Nei. ASK står for Alternativ og Supplerende Kommunikasjon, og er for barn uten talespråk. Bumle hjelper barn å lære ord og uttale, og er spesielt nyttig for foreldre med dialekt eller logopeder som jobber med artikulasjon.</p>
+    <summary>Is Bumle an AAC app like Balubi?</summary>
+    <p>No. AAC stands for Augmentative and Alternative Communication, for children without spoken language. Bumle helps children learn words and pronunciation, especially useful for parents with a dialect or speech therapists working on articulation.</p>
   </details>
   <details class="faq">
-    <summary>Hvordan fungerer lyd-pakke-deling?</summary>
-    <p>Du spiller inn opptak i appen, tapper «Del pakke», og får én .bumlepack-fil. Send den via AirDrop, iMessage, e-post eller lagre i Filer. Mottakeren tapper på fila, og opptakene importeres i deres Bumle. Ingenting går via våre servere.</p>
+    <summary>How does voice-package sharing work?</summary>
+    <p>You record audio in the app, tap «Share package», and get one .bumlepack file. Send it via AirDrop, iMessage, email or save in Files. The recipient taps the file, recordings are imported into their Bumle. Nothing goes through our servers.</p>
   </details>
   <details class="faq">
-    <summary>Hvor lagres opptak og bilder?</summary>
-    <p>Kun lokalt på iPhone-en din, kryptert med en enhetsspesifikk nøkkel. Bumle Bjørn sender aldri opptak til våre eller tredjeparts servere.</p>
+    <summary>Where are recordings and photos stored?</summary>
+    <p>Only locally on your iPhone, encrypted with a device-specific key. Bumle Bjørn never sends recordings to our or third-party servers.</p>
   </details>
   <details class="faq">
-    <summary>Er det reklame eller sporing?</summary>
-    <p>Nei. Ingen reklame, ingen tredjeparts SDK-er, ingen sporing. Bumle er Kids Category-godkjent.</p>
+    <summary>Are there ads or tracking?</summary>
+    <p>No. No ads, no third-party SDKs, no tracking. Bumle is approved for the App Store Kids Category.</p>
   </details>
   <details class="faq">
-    <summary>Hvilke språk støttes?</summary>
-    <p>9 språk: norsk (bokmål), dansk, svensk, finsk, engelsk, tysk, fransk, spansk og nederlandsk. Hele appen, ikke bare menyer.</p>
+    <summary>Which languages are supported?</summary>
+    <p>9 languages: Norwegian (Bokmål), Danish, Swedish, Finnish, English, German, French, Spanish and Dutch. The whole app, not just menus.</p>
   </details>
   <details class="faq">
-    <summary>Hvilken alder er appen for?</summary>
-    <p>1 til 8 år. Yngre barn bruker enkle moduser som «Hør og finn» og «Utforsk», eldre kan bruke memory, telling og «Finn i bildet». Vanskelighetsgraden tilpasses automatisk.</p>
+    <summary>What age is the app for?</summary>
+    <p>1 to 8 years. Younger children use simple modes like «Listen and find» and «Explore», older children can use memory, counting and «Find in the picture». Difficulty adapts automatically.</p>
   </details>
 </section>
 
-<!-- FOOTER -->
 <footer class="site">
-  <span>© Bumle 2026 · Utviklet av pappa Jonas, testet av Synne</span>
+  <span>© Bumle 2026 · Built by dad Jonas, tested by Synne</span>
   <div class="links">
-    <a href="personvern">Personvern</a>
-    <a href="vilkar">Vilkår</a>
-    <a href="https://apps.apple.com/no/app/bumle-bj%C3%B8rn-learn-words/id6761500591">App Store</a>
+    <a href="/personvern">Privacy (Norwegian)</a>
+    <a href="/vilkar">Terms (Norwegian)</a>
+    <a href="https://apps.apple.com/app/id6761500591">App Store</a>
     <a href="mailto:jonas@bumle.app">jonas@bumle.app</a>
   </div>
 </footer>
 
 <script>
-// Generate waveform bars
 (function() {
   var wf = document.getElementById('waveform');
   if (!wf) return;
@@ -814,23 +548,22 @@ footer.site .links { display: flex; gap: 24px; }
   }
 })();
 
-// Tester form
 function sendApplication(event) {
   event.preventDefault();
   var name = document.getElementById('name').value.trim();
   var email = document.getElementById('email').value.trim();
   var role = document.getElementById('role').value;
   var why = document.getElementById('why').value.trim();
-  var subject = 'Søknad om Bumle Bjørn-tilgang: ' + name;
+  var subject = 'Application for Bumle Bjørn access: ' + name;
   var bodyLines = [
-    'Navn: ' + name,
-    'E-post: ' + email,
-    'Rolle: ' + role,
+    'Name: ' + name,
+    'Email: ' + email,
+    'Role: ' + role,
     '',
-    'Hva vil du bruke Bumle til?',
-    why || '(ikke fylt ut)',
+    'What will you use Bumle for?',
+    why || '(not filled in)',
     '',
-    'Sendt fra bumle.app.'
+    'Sent from bumle.app.'
   ];
   var body = bodyLines.join('\n');
   var href = 'mailto:jonas@bumle.app'
