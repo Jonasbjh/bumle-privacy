@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bumle Bjørn: vi søker testere</title>
+    <meta name="description" content="Bumle Bjørn er en pedagogisk iOS-app for barn 1 til 8 år. Vi søker foreldre, logopeder og pedagoger som vil teste den nye lyd-pakke-deling-funksjonen.">
+    <meta property="og:title" content="Bumle Bjørn: vi søker testere">
+    <meta property="og:description" content="Få gratis tilgang til den nye versjonen med lyd-pakke-deling for foreldre, logopeder og pedagoger.">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 24px 20px 60px;
+            line-height: 1.6;
+            color: #2C2520;
+            background: #FFF8F0;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .bear {
+            font-size: 56px;
+            margin-bottom: 8px;
+        }
+        h1 {
+            font-size: 32px;
+            margin: 0 0 8px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        h1 + p {
+            font-size: 17px;
+            color: #6B5040;
+            margin: 0;
+        }
+        h2 {
+            font-size: 20px;
+            margin-top: 32px;
+            margin-bottom: 8px;
+            color: #E8862A;
+        }
+        h3 { font-size: 16px; margin: 16px 0 4px; }
+        p, li { font-size: 15px; }
+        ul { padding-left: 20px; }
+        .card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 20px 22px;
+            margin: 20px 0;
+            box-shadow: 0 2px 12px rgba(60,40,30,0.05);
+            border: 1px solid rgba(60,40,30,0.06);
+        }
+        .badge {
+            display: inline-block;
+            background: #FCE8D2;
+            color: #B3561F;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        form {
+            display: grid;
+            gap: 14px;
+            margin-top: 12px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #6B5040;
+        }
+        input, select, textarea {
+            width: 100%;
+            font-family: inherit;
+            font-size: 15px;
+            padding: 12px 14px;
+            border: 1px solid rgba(60,40,30,0.15);
+            border-radius: 12px;
+            background: #FFFCF6;
+            color: #2C2520;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #E8862A;
+            background: #fff;
+        }
+        textarea { min-height: 90px; resize: vertical; }
+        button {
+            background: #E8862A;
+            color: #fff;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        button:hover { background: #D4731F; }
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #998877;
+            margin-top: 40px;
+        }
+        .footer a { color: #6B5040; }
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 8px 0 0;
+        }
+        .pill {
+            background: #fff;
+            border: 1px solid rgba(60,40,30,0.1);
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #6B5040;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="bear">🐻</div>
+        <h1>Bumle Bjørn</h1>
+        <p>Pedagogisk iOS-app for barn 1 til 8 år</p>
+    </header>
+
+    <div class="card">
+        <span class="badge">Vi søker testere</span>
+        <h2 style="margin-top: 12px;">Få gratis tilgang til Bumle+</h2>
+        <p>
+            Bumle Bjørn er på App Store. I siste versjon har vi lagt til
+            <strong>deling av lyd-pakker</strong>: foreldre kan spille inn ord på
+            sin egen dialekt og dele med besteforeldre, og logopeder kan lage
+            pakker for sine pasienter slik at barnet hører den riktige
+            artikulasjonen hjemme mellom timene.
+        </p>
+        <p>
+            Vi leter etter folk som vil teste funksjonen og gi tilbakemelding.
+            Du får en gratis kode til Bumle+ i bytte mot at du sier hva du
+            tenker.
+        </p>
+        <div class="pill-row">
+            <span class="pill">Foreldre 1 til 8 år</span>
+            <span class="pill">Logopeder</span>
+            <span class="pill">Pedagoger</span>
+            <span class="pill">Helsesøstre</span>
+        </div>
+    </div>
+
+    <h2>Hva er nytt</h2>
+    <ul>
+        <li><strong>Lyd-pakker:</strong> eksporter alle stemmeopptak til én fil. Del via AirDrop, iMessage eller Filer.</li>
+        <li><strong>Egne kategorier:</strong> 4 nye startmaler (Min familie, Mine leker, Vårt hus, Min barnehage). Lag dine egne kort med egne bilder og lyd.</li>
+        <li><strong>Stemmer for fagpersoner:</strong> ferdige roller for logoped, lærer, pedagog, dagmamma.</li>
+        <li><strong>Engangskjøp, ikke abonnement:</strong> Bumle+ er en engangsbetaling. Pasientene dine slipper å betale månedlig.</li>
+    </ul>
+
+    <h2>Slik bruker logopeder det</h2>
+    <p>
+        Spill inn settene du jobber med (artikulasjon, dialekt, lydkombinasjoner)
+        i appen. Eksporter som <code>.bumlepack</code>-fil. Send til foreldrene
+        via e-post eller iMessage. Foreldrene tapper på fila, og alle opptakene
+        dine havner i sin Bumle. Barnet hører deg uttale ordene hjemme også.
+    </p>
+
+    <div class="card" id="soknad">
+        <h2 style="margin-top: 0;">Søk om tilgang</h2>
+        <p style="margin-top: 0;">
+            Fyll ut skjemaet under, så svarer Jonas (utvikleren) personlig
+            innen et par dager med en gratis Bumle+-kode.
+        </p>
+        <form id="testerForm" onsubmit="return sendApplication(event)">
+            <div>
+                <label for="name">Navn</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">E-post</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="role">Hvem er du?</label>
+                <select id="role" name="role" required>
+                    <option value="">Velg en rolle</option>
+                    <option value="Forelder">Forelder</option>
+                    <option value="Logoped">Logoped</option>
+                    <option value="Pedagog / barnehage">Pedagog / barnehage</option>
+                    <option value="Lærer">Lærer</option>
+                    <option value="Helsesøster">Helsesøster</option>
+                    <option value="Annet">Annet</option>
+                </select>
+            </div>
+            <div>
+                <label for="why">Hva vil du bruke Bumle til?</label>
+                <textarea id="why" name="why" placeholder="F.eks. «pasienter med dysleksi», «toåringen min lærer dialekt», «teste i barnehagen min»…"></textarea>
+            </div>
+            <button type="submit">Send søknad</button>
+            <p id="formNote" style="font-size: 12px; color: #998877; margin: 4px 0 0; text-align: center;">
+                E-postklienten din åpnes med søknaden ferdig skrevet. Du sender selv.
+            </p>
+        </form>
+
+        <script>
+            function sendApplication(event) {
+                event.preventDefault();
+                var name = document.getElementById('name').value.trim();
+                var email = document.getElementById('email').value.trim();
+                var role = document.getElementById('role').value;
+                var why = document.getElementById('why').value.trim();
+
+                var subject = 'Søknad om Bumle Bjørn-tilgang: ' + name;
+                var bodyLines = [
+                    'Navn: ' + name,
+                    'E-post: ' + email,
+                    'Rolle: ' + role,
+                    '',
+                    'Hva vil du bruke Bumle til?',
+                    why || '(ikke fylt ut)',
+                    '',
+                    'Sendt fra Bumle Bjørn-landingside.'
+                ];
+                var body = bodyLines.join('\n');
+
+                var href = 'mailto:jonasbjh@gmail.com'
+                    + '?subject=' + encodeURIComponent(subject)
+                    + '&body=' + encodeURIComponent(body);
+
+                window.location.href = href;
+                return false;
+            }
+        </script>
+    </div>
+
+    <div class="card">
+        <h2 style="margin-top: 0;">Spørsmål du kanskje lurer på</h2>
+
+        <h3>Koster det noe?</h3>
+        <p>Nei, du får en gratis Bumle+-kode hvis vi tar deg med som tester. Ellers er Bumle Bjørn gratis å laste ned med begrenset innhold.</p>
+
+        <h3>Hva må jeg gjøre som tester?</h3>
+        <p>Bruke appen som du normalt ville, og gi en kort tilbakemelding på e-post. Ingen krav om volum eller form.</p>
+
+        <h3>Hvor lagres mine opptak og bilder?</h3>
+        <p>Kun på iPhone-en din. Ingen data sendes til server. Når du eksplisitt deler en lyd-pakke, går den via systemets standard delingsfunksjoner (AirDrop, iMessage, e-post).</p>
+
+        <h3>Er det reklame eller sporing?</h3>
+        <p>Nei. Ingen reklame, ingen tredjeparts SDK-er, ingen sporing. Kids Category-godkjent.</p>
+    </div>
+
+    <div class="footer">
+        <p>
+            <a href="personvern">Personvern</a> ·
+            <a href="vilkar">Vilkår</a> ·
+            <a href="https://apps.apple.com/app/id6744244584">App Store</a>
+        </p>
+        <p>Spørsmål? <a href="mailto:jonasbjh@gmail.com">jonasbjh@gmail.com</a></p>
+    </div>
+</body>
+</html>
