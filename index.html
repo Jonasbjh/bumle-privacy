@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bumle Bjørn: pedagogisk app for barn 1 til 8 år</title>
     <meta name="description" content="Bumle Bjørn er en pedagogisk iOS-app for barn 1 til 8 år. Ord, bilder og lyd på 9 språk. Foreldre kan spille inn egen stemme, og logopeder kan dele lyd-pakker med pasienter. Ingen abonnement.">
+    <link rel="alternate" hreflang="no" href="https://bumle.app/">
+    <link rel="alternate" hreflang="en" href="https://bumle.app/en/">
+    <link rel="alternate" hreflang="x-default" href="https://bumle.app/">
+    <link rel="icon" type="image/png" href="app-icon.png">
+    <link rel="apple-touch-icon" href="app-icon.png">
     <meta property="og:title" content="Bumle Bjørn: pedagogisk app for barn 1 til 8 år">
     <meta property="og:description" content="Ord, bilder og lyd på 9 språk. Mamma sin stemme, ikke en robotstemme. Engangskjøp, ingen abonnement.">
-    <meta property="og:image" content="https://bumle.app/og-image.png">
+    <meta property="og:image" content="https://bumle.app/app-icon.png">
     <meta name="theme-color" content="#E8862A">
 
     <script type="application/ld+json">
@@ -49,34 +54,50 @@
         }
         a { color: #E8862A; text-decoration: none; }
         a:hover { text-decoration: underline; }
-
         .container { max-width: 880px; margin: 0 auto; padding: 0 20px; }
 
         header.site {
-            padding: 18px 0;
+            padding: 14px 0;
             border-bottom: 1px solid rgba(60,40,30,0.08);
-            background: #FFF8F0;
-            position: sticky;
-            top: 0;
-            z-index: 10;
+            background: rgba(255,248,240,0.92);
+            backdrop-filter: saturate(150%) blur(12px);
+            -webkit-backdrop-filter: saturate(150%) blur(12px);
+            position: sticky; top: 0; z-index: 10;
         }
-        header.site .row { display: flex; align-items: center; justify-content: space-between; }
-        header.site .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: #2C2520; }
-        header.site .brand .bear { font-size: 28px; }
+        header.site .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        header.site .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; color: #2C2520; }
+        header.site .brand img { width: 32px; height: 32px; border-radius: 7px; }
         header.site nav { display: flex; gap: 18px; font-size: 14px; font-weight: 600; }
         header.site nav a { color: #6B5040; }
-        @media (max-width: 600px) { header.site nav { display: none; } }
+        .lang-switch { display: flex; gap: 6px; align-items: center; }
+        .lang-switch a { font-size: 18px; padding: 4px 6px; border-radius: 6px; line-height: 1; }
+        .lang-switch a.active { background: rgba(232,134,42,0.15); }
+        .lang-switch a:hover { text-decoration: none; background: rgba(232,134,42,0.1); }
+        @media (max-width: 720px) { header.site nav { display: none; } }
 
-        .hero { padding: 56px 0 48px; text-align: center; }
-        .hero .bear-big { font-size: 88px; margin-bottom: 8px; }
-        .hero h1 { font-size: 40px; line-height: 1.15; margin: 0 0 12px; font-weight: 800; letter-spacing: -0.8px; }
-        .hero .lead { font-size: 18px; color: #6B5040; max-width: 560px; margin: 0 auto 28px; }
-        .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .hero { padding: 56px 0 40px; text-align: center; }
+        .hero img.bear { width: 180px; height: 180px; object-fit: contain; margin-bottom: 8px; filter: drop-shadow(0 8px 24px rgba(60,40,30,0.12)); }
+        .hero h1 { font-size: 44px; line-height: 1.1; margin: 0 0 14px; font-weight: 800; letter-spacing: -1px; }
+        .hero .lead { font-size: 18px; color: #6B5040; max-width: 580px; margin: 0 auto 28px; }
+        .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; align-items: center; }
         .btn { display: inline-flex; align-items: center; gap: 8px; font-family: inherit; font-size: 15px; font-weight: 700; padding: 14px 22px; border-radius: 14px; border: none; cursor: pointer; text-decoration: none; }
         .btn-primary { background: #E8862A; color: #fff; }
         .btn-primary:hover { background: #D4731F; text-decoration: none; }
         .btn-secondary { background: #fff; color: #2C2520; border: 1px solid rgba(60,40,30,0.15); }
         .btn-secondary:hover { background: #FFFCF6; text-decoration: none; }
+
+        .app-store-badge {
+            display: inline-flex; align-items: center; gap: 12px;
+            background: #000; color: #fff;
+            padding: 10px 18px 10px 14px; border-radius: 12px;
+            text-decoration: none;
+            transition: transform 0.15s;
+        }
+        .app-store-badge:hover { text-decoration: none; transform: translateY(-1px); }
+        .app-store-badge svg { width: 26px; height: 26px; flex-shrink: 0; }
+        .app-store-badge .text { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
+        .app-store-badge .text .small { font-size: 11px; opacity: 0.85; }
+        .app-store-badge .text .big { font-size: 19px; font-weight: 600; letter-spacing: -0.3px; }
 
         section { padding: 56px 0; border-top: 1px solid rgba(60,40,30,0.08); }
         section h2 { font-size: 28px; margin: 0 0 8px; letter-spacing: -0.4px; text-align: center; }
@@ -88,6 +109,12 @@
         .feature .icon { font-size: 32px; margin-bottom: 8px; }
         .feature h3 { margin: 0 0 6px; font-size: 17px; font-weight: 700; }
         .feature p { margin: 0; color: #6B5040; font-size: 14px; }
+
+        .screenshots { display: flex; gap: 16px; overflow-x: auto; padding: 8px 4px 24px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+        .screenshots::-webkit-scrollbar { height: 8px; }
+        .screenshots::-webkit-scrollbar-track { background: rgba(60,40,30,0.05); border-radius: 4px; }
+        .screenshots::-webkit-scrollbar-thumb { background: rgba(60,40,30,0.2); border-radius: 4px; }
+        .screenshots img { width: 240px; flex-shrink: 0; border-radius: 24px; box-shadow: 0 8px 32px rgba(60,40,30,0.15); scroll-snap-align: center; }
 
         .audience { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         @media (max-width: 600px) { .audience { grid-template-columns: 1fr; } }
@@ -133,22 +160,25 @@
 
 <header class="site">
     <div class="container row">
-        <div class="brand">
-            <span class="bear">🐻</span>
+        <a href="/" class="brand" style="text-decoration: none;">
+            <img src="app-icon.png" alt="Bumle Bjørn">
             <span>Bumle Bjørn</span>
-        </div>
+        </a>
         <nav>
             <a href="#funksjoner">Funksjoner</a>
             <a href="#fagpersoner">Logopeder</a>
             <a href="#tester">Bli tester</a>
-            <a href="https://apps.apple.com/app/id6744244584">App Store</a>
         </nav>
+        <div class="lang-switch" aria-label="Velg språk">
+            <a href="/" class="active" aria-current="page" title="Norsk">🇳🇴</a>
+            <a href="/en/" title="English">🇬🇧</a>
+        </div>
     </div>
 </header>
 
 <section class="hero">
     <div class="container">
-        <div class="bear-big">🐻</div>
+        <img class="bear" src="bumle-bear.png" alt="Bumle Bjørn maskoten">
         <h1>Mamma sin stemme.<br>Ikke en robotstemme.</h1>
         <p class="lead">
             Bumle Bjørn er en pedagogisk app for barn 1 til 8 år. Ord, bilder
@@ -156,7 +186,10 @@
             inn sin egen stemme. Barnet hører folk de er glad i.
         </p>
         <div class="cta-row">
-            <a href="https://apps.apple.com/app/id6744244584" class="btn btn-primary">Last ned i App Store</a>
+            <a href="https://apps.apple.com/no/app/bumle-bj%C3%B8rn-learn-words/id6761500591" class="app-store-badge">
+                <svg viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                <span class="text"><span class="small">Last ned på</span><span class="big">App Store</span></span>
+            </a>
             <a href="#tester" class="btn btn-secondary">Søk om gratis tilgang</a>
         </div>
     </div>
@@ -202,6 +235,20 @@
     </div>
 </section>
 
+<section>
+    <div class="container">
+        <h2>Slik ser det ut</h2>
+        <p class="subtitle">Skjermbilder fra appen. Sveip for å se mer.</p>
+        <div class="screenshots">
+            <img src="screenshots/01-home.png" alt="Hovedskjerm med kategorier">
+            <img src="screenshots/02-game.png" alt="Spillmodus">
+            <img src="screenshots/03-voices.png" alt="Stemmeopptak">
+            <img src="screenshots/04-result.png" alt="Resultater">
+            <img src="screenshots/05-bear.png" alt="Bumle-bjørnen">
+        </div>
+    </div>
+</section>
+
 <section id="fagpersoner">
     <div class="container">
         <h2>For foreldre og fagpersoner</h2>
@@ -240,7 +287,6 @@
     <div class="container">
         <h2>Slik fungerer lyd-pakker</h2>
         <p class="subtitle">For en logoped som lager en pakke til en pasient. Tar 5 minutter.</p>
-
         <div class="steps">
             <div class="step">
                 <div class="num">1</div>
@@ -310,7 +356,6 @@
                 var email = document.getElementById('email').value.trim();
                 var role = document.getElementById('role').value;
                 var why = document.getElementById('why').value.trim();
-
                 var subject = 'Søknad om Bumle Bjørn-tilgang: ' + name;
                 var bodyLines = [
                     'Navn: ' + name,
@@ -323,11 +368,9 @@
                     'Sendt fra bumle.app.'
                 ];
                 var body = bodyLines.join('\n');
-
                 var href = 'mailto:jonas@bumle.app'
                     + '?subject=' + encodeURIComponent(subject)
                     + '&body=' + encodeURIComponent(body);
-
                 window.location.href = href;
                 return false;
             }
@@ -340,45 +383,14 @@
         <h2>Spørsmål du kanskje lurer på</h2>
         <p class="subtitle">Korte svar på det vi hører oftest.</p>
 
-        <details>
-            <summary>Koster Bumle Bjørn noe?</summary>
-            <p>Du kan laste ned gratis og bruke 2 kategorier (Dyr og Farger og former) pluss 3 spillmoduser. Bumle+ låser opp alle 21 kategorier, alle 7 spillmoduser, ubegrenset stemmeopptak og lyd-pakke-deling. Bumle+ er en engangsbetaling, ikke et abonnement.</p>
-        </details>
-
-        <details>
-            <summary>Hva er ASK-app, og er Bumle en?</summary>
-            <p>ASK står for Alternativ og Supplerende Kommunikasjon, og er for barn som ikke har talespråk. Bumle er ikke en ASK-app. Bumle hjelper barn å lære ord og uttale, og er spesielt nyttig for foreldre med dialekt eller logopeder som jobber med artikulasjon.</p>
-        </details>
-
-        <details>
-            <summary>Hvordan fungerer lyd-pakke-deling?</summary>
-            <p>Du spiller inn opptak i appen, tapper «Del pakke», og får én fil (.bumlepack). Send fila via AirDrop, iMessage, e-post eller lagre i Filer. Mottakeren tapper på fila, og opptakene importeres i deres Bumle. All deling skjer via systemets standard kanaler. Ingenting går via våre servere.</p>
-        </details>
-
-        <details>
-            <summary>Hvor lagres opptak og bilder?</summary>
-            <p>Kun lokalt på iPhone-en din, kryptert med en enhetsspesifikk nøkkel. Bumle Bjørn sender aldri opptak til våre eller tredjeparts servere. Når du eksplisitt deler en lyd-pakke, går den via din egen e-post, iMessage eller AirDrop.</p>
-        </details>
-
-        <details>
-            <summary>Er det reklame eller sporing?</summary>
-            <p>Nei. Ingen reklame, ingen tredjeparts SDK-er, ingen sporing. Bumle er Kids Category-godkjent på App Store, som krever streng overholdelse av barns personvern.</p>
-        </details>
-
-        <details>
-            <summary>Hvilke språk støttes?</summary>
-            <p>9 språk: norsk (bokmål), dansk, svensk, finsk, engelsk, tysk, fransk, spansk og nederlandsk. Hele appen er oversatt, ikke bare menyer.</p>
-        </details>
-
-        <details>
-            <summary>Hvilken alder er appen for?</summary>
-            <p>1 til 8 år. Yngre barn bruker enkle moduser som «Hør og finn» og «Utforsk», mens eldre kan bruke memory, telling og «Finn i bildet». Vanskelighetsgraden tilpasses automatisk.</p>
-        </details>
-
-        <details>
-            <summary>Hvordan er foreldrekontroll?</summary>
-            <p>Innstillinger låses bak en matteoppgave (Kids Category-krav) og valgfri PIN eller Face ID. Skjermtidsbegrensning, daglige mål og ukentlig fremdriftsrapport.</p>
-        </details>
+        <details><summary>Koster Bumle Bjørn noe?</summary><p>Du kan laste ned gratis og bruke 2 kategorier (Dyr og Farger og former) pluss 3 spillmoduser. Bumle+ låser opp alle 21 kategorier, alle 7 spillmoduser, ubegrenset stemmeopptak og lyd-pakke-deling. Bumle+ er en engangsbetaling, ikke et abonnement.</p></details>
+        <details><summary>Hva er ASK-app, og er Bumle en?</summary><p>ASK står for Alternativ og Supplerende Kommunikasjon, og er for barn som ikke har talespråk. Bumle er ikke en ASK-app. Bumle hjelper barn å lære ord og uttale, og er spesielt nyttig for foreldre med dialekt eller logopeder som jobber med artikulasjon.</p></details>
+        <details><summary>Hvordan fungerer lyd-pakke-deling?</summary><p>Du spiller inn opptak i appen, tapper «Del pakke», og får én fil (.bumlepack). Send fila via AirDrop, iMessage, e-post eller lagre i Filer. Mottakeren tapper på fila, og opptakene importeres i deres Bumle. All deling skjer via systemets standard kanaler. Ingenting går via våre servere.</p></details>
+        <details><summary>Hvor lagres opptak og bilder?</summary><p>Kun lokalt på iPhone-en din, kryptert med en enhetsspesifikk nøkkel. Bumle Bjørn sender aldri opptak til våre eller tredjeparts servere. Når du eksplisitt deler en lyd-pakke, går den via din egen e-post, iMessage eller AirDrop.</p></details>
+        <details><summary>Er det reklame eller sporing?</summary><p>Nei. Ingen reklame, ingen tredjeparts SDK-er, ingen sporing. Bumle er Kids Category-godkjent på App Store, som krever streng overholdelse av barns personvern.</p></details>
+        <details><summary>Hvilke språk støttes?</summary><p>9 språk: norsk (bokmål), dansk, svensk, finsk, engelsk, tysk, fransk, spansk og nederlandsk. Hele appen er oversatt, ikke bare menyer.</p></details>
+        <details><summary>Hvilken alder er appen for?</summary><p>1 til 8 år. Yngre barn bruker enkle moduser som «Hør og finn» og «Utforsk», mens eldre kan bruke memory, telling og «Finn i bildet». Vanskelighetsgraden tilpasses automatisk.</p></details>
+        <details><summary>Hvordan er foreldrekontroll?</summary><p>Innstillinger låses bak en matteoppgave (Kids Category-krav) og valgfri PIN eller Face ID. Skjermtidsbegrensning, daglige mål og ukentlig fremdriftsrapport.</p></details>
     </div>
 </section>
 
@@ -387,7 +399,7 @@
         <div class="links">
             <a href="personvern">Personvern</a>
             <a href="vilkar">Vilkår</a>
-            <a href="https://apps.apple.com/app/id6744244584">App Store</a>
+            <a href="https://apps.apple.com/no/app/bumle-bj%C3%B8rn-learn-words/id6761500591">App Store</a>
         </div>
         <p>Spørsmål? <a href="mailto:jonas@bumle.app">jonas@bumle.app</a></p>
         <p style="font-size: 12px; margin-top: 16px;">Utviklet av pappa Jonas. Testet av Synne.</p>
