@@ -18,116 +18,27 @@
             color: #2C2520;
             background: #FFF8F0;
         }
-        header {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-        .bear {
-            font-size: 56px;
-            margin-bottom: 8px;
-        }
-        h1 {
-            font-size: 32px;
-            margin: 0 0 8px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-        h1 + p {
-            font-size: 17px;
-            color: #6B5040;
-            margin: 0;
-        }
-        h2 {
-            font-size: 20px;
-            margin-top: 32px;
-            margin-bottom: 8px;
-            color: #E8862A;
-        }
+        header { text-align: center; margin-bottom: 32px; }
+        .bear { font-size: 56px; margin-bottom: 8px; }
+        h1 { font-size: 32px; margin: 0 0 8px; font-weight: 700; letter-spacing: -0.5px; }
+        h1 + p { font-size: 17px; color: #6B5040; margin: 0; }
+        h2 { font-size: 20px; margin-top: 32px; margin-bottom: 8px; color: #E8862A; }
         h3 { font-size: 16px; margin: 16px 0 4px; }
         p, li { font-size: 15px; }
         ul { padding-left: 20px; }
-        .card {
-            background: #fff;
-            border-radius: 18px;
-            padding: 20px 22px;
-            margin: 20px 0;
-            box-shadow: 0 2px 12px rgba(60,40,30,0.05);
-            border: 1px solid rgba(60,40,30,0.06);
-        }
-        .badge {
-            display: inline-block;
-            background: #FCE8D2;
-            color: #B3561F;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 999px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-        form {
-            display: grid;
-            gap: 14px;
-            margin-top: 12px;
-        }
-        label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 4px;
-            color: #6B5040;
-        }
-        input, select, textarea {
-            width: 100%;
-            font-family: inherit;
-            font-size: 15px;
-            padding: 12px 14px;
-            border: 1px solid rgba(60,40,30,0.15);
-            border-radius: 12px;
-            background: #FFFCF6;
-            color: #2C2520;
-        }
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: #E8862A;
-            background: #fff;
-        }
+        .card { background: #fff; border-radius: 18px; padding: 20px 22px; margin: 20px 0; box-shadow: 0 2px 12px rgba(60,40,30,0.05); border: 1px solid rgba(60,40,30,0.06); }
+        .badge { display: inline-block; background: #FCE8D2; color: #B3561F; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; letter-spacing: 0.5px; text-transform: uppercase; }
+        form { display: grid; gap: 14px; margin-top: 12px; }
+        label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 4px; color: #6B5040; }
+        input, select, textarea { width: 100%; font-family: inherit; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(60,40,30,0.15); border-radius: 12px; background: #FFFCF6; color: #2C2520; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: #E8862A; background: #fff; }
         textarea { min-height: 90px; resize: vertical; }
-        button {
-            background: #E8862A;
-            color: #fff;
-            font-family: inherit;
-            font-size: 16px;
-            font-weight: 700;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 14px;
-            cursor: pointer;
-            margin-top: 8px;
-        }
+        button { background: #E8862A; color: #fff; font-family: inherit; font-size: 16px; font-weight: 700; padding: 14px 20px; border: none; border-radius: 14px; cursor: pointer; margin-top: 8px; }
         button:hover { background: #D4731F; }
-        .footer {
-            text-align: center;
-            font-size: 13px;
-            color: #998877;
-            margin-top: 40px;
-        }
+        .footer { text-align: center; font-size: 13px; color: #998877; margin-top: 40px; }
         .footer a { color: #6B5040; }
-        .pill-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 8px 0 0;
-        }
-        .pill {
-            background: #fff;
-            border: 1px solid rgba(60,40,30,0.1);
-            border-radius: 999px;
-            padding: 6px 12px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #6B5040;
-        }
+        .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 0; }
+        .pill { background: #fff; border: 1px solid rgba(60,40,30,0.1); border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 600; color: #6B5040; }
     </style>
 </head>
 <body>
@@ -234,7 +145,7 @@
                 ];
                 var body = bodyLines.join('\n');
 
-                var href = 'mailto:jonasbjh@gmail.com'
+                var href = 'mailto:jonas@bumle.app'
                     + '?subject=' + encodeURIComponent(subject)
                     + '&body=' + encodeURIComponent(body);
 
@@ -266,7 +177,7 @@
             <a href="vilkar">Vilkår</a> ·
             <a href="https://apps.apple.com/app/id6744244584">App Store</a>
         </p>
-        <p>Spørsmål? <a href="mailto:jonasbjh@gmail.com">jonasbjh@gmail.com</a></p>
+        <p>Spørsmål? <a href="mailto:jonas@bumle.app">jonas@bumle.app</a></p>
     </div>
 </body>
 </html>
