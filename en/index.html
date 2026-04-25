@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bumle Bjørn: educational app for kids 1 to 8</title>
+    <meta name="description" content="Bumle Bjørn is an educational iOS app for children ages 1 to 8. Words, pictures and audio in 9 languages. Parents record their own voice, and speech therapists can share voice packages with patients. No subscription.">
+    <link rel="alternate" hreflang="no" href="https://bumle.app/">
+    <link rel="alternate" hreflang="en" href="https://bumle.app/en/">
+    <link rel="alternate" hreflang="x-default" href="https://bumle.app/">
+    <link rel="icon" type="image/png" href="../app-icon.png">
+    <link rel="apple-touch-icon" href="../app-icon.png">
+    <meta property="og:title" content="Bumle Bjørn: educational app for kids 1 to 8">
+    <meta property="og:description" content="Words, pictures and audio in 9 languages. Mum's voice, not a robot voice. One-time purchase, no subscription.">
+    <meta property="og:image" content="https://bumle.app/app-icon.png">
+    <meta name="theme-color" content="#E8862A">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Bumle Bjørn",
+      "applicationCategory": "EducationApplication",
+      "operatingSystem": "iOS 17+",
+      "description": "Educational app for kids 1 to 8 with words, pictures and audio. Parents can record their own voice, and speech therapists can share voice packages with their patients.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free to download. Bumle+ is a one-time purchase for full access."
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Jonas Haug",
+        "email": "jonas@bumle.app"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Parents, grandparents, speech therapists, educators and children ages 1 to 8"
+      },
+      "inLanguage": ["nb", "da", "de", "en", "es", "fi", "fr", "nl", "sv"]
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; line-height: 1.6; color: #2C2520; background: #FFF8F0; }
+        a { color: #E8862A; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+        header.site { padding: 14px 0; border-bottom: 1px solid rgba(60,40,30,0.08); background: rgba(255,248,240,0.92); backdrop-filter: saturate(150%) blur(12px); -webkit-backdrop-filter: saturate(150%) blur(12px); position: sticky; top: 0; z-index: 10; }
+        header.site .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        header.site .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; color: #2C2520; }
+        header.site .brand img { width: 32px; height: 32px; border-radius: 7px; }
+        header.site nav { display: flex; gap: 18px; font-size: 14px; font-weight: 600; }
+        header.site nav a { color: #6B5040; }
+        .lang-switch { display: flex; gap: 6px; align-items: center; }
+        .lang-switch a { font-size: 18px; padding: 4px 6px; border-radius: 6px; line-height: 1; }
+        .lang-switch a.active { background: rgba(232,134,42,0.15); }
+        .lang-switch a:hover { text-decoration: none; background: rgba(232,134,42,0.1); }
+        @media (max-width: 720px) { header.site nav { display: none; } }
+
+        .hero { padding: 56px 0 40px; text-align: center; }
+        .hero img.bear { width: 180px; height: 180px; object-fit: contain; margin-bottom: 8px; filter: drop-shadow(0 8px 24px rgba(60,40,30,0.12)); }
+        .hero h1 { font-size: 44px; line-height: 1.1; margin: 0 0 14px; font-weight: 800; letter-spacing: -1px; }
+        .hero .lead { font-size: 18px; color: #6B5040; max-width: 580px; margin: 0 auto 28px; }
+        .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; align-items: center; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; font-family: inherit; font-size: 15px; font-weight: 700; padding: 14px 22px; border-radius: 14px; border: none; cursor: pointer; text-decoration: none; }
+        .btn-primary { background: #E8862A; color: #fff; }
+        .btn-primary:hover { background: #D4731F; text-decoration: none; }
+        .btn-secondary { background: #fff; color: #2C2520; border: 1px solid rgba(60,40,30,0.15); }
+        .btn-secondary:hover { background: #FFFCF6; text-decoration: none; }
+
+        .app-store-badge { display: inline-flex; align-items: center; gap: 12px; background: #000; color: #fff; padding: 10px 18px 10px 14px; border-radius: 12px; text-decoration: none; transition: transform 0.15s; }
+        .app-store-badge:hover { text-decoration: none; transform: translateY(-1px); }
+        .app-store-badge svg { width: 26px; height: 26px; flex-shrink: 0; }
+        .app-store-badge .text { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
+        .app-store-badge .text .small { font-size: 11px; opacity: 0.85; }
+        .app-store-badge .text .big { font-size: 19px; font-weight: 600; letter-spacing: -0.3px; }
+
+        section { padding: 56px 0; border-top: 1px solid rgba(60,40,30,0.08); }
+        section h2 { font-size: 28px; margin: 0 0 8px; letter-spacing: -0.4px; text-align: center; }
+        section .subtitle { text-align: center; color: #6B5040; font-size: 16px; margin: 0 auto 32px; max-width: 540px; }
+
+        .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        @media (max-width: 600px) { .features { grid-template-columns: 1fr; } }
+        .feature { background: #fff; border-radius: 18px; padding: 22px; box-shadow: 0 2px 12px rgba(60,40,30,0.05); border: 1px solid rgba(60,40,30,0.06); }
+        .feature .icon { font-size: 32px; margin-bottom: 8px; }
+        .feature h3 { margin: 0 0 6px; font-size: 17px; font-weight: 700; }
+        .feature p { margin: 0; color: #6B5040; font-size: 14px; }
+
+        .screenshots { display: flex; gap: 16px; overflow-x: auto; padding: 8px 4px 24px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+        .screenshots::-webkit-scrollbar { height: 8px; }
+        .screenshots::-webkit-scrollbar-track { background: rgba(60,40,30,0.05); border-radius: 4px; }
+        .screenshots::-webkit-scrollbar-thumb { background: rgba(60,40,30,0.2); border-radius: 4px; }
+        .screenshots img { width: 240px; flex-shrink: 0; border-radius: 24px; box-shadow: 0 8px 32px rgba(60,40,30,0.15); scroll-snap-align: center; }
+
+        .audience { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 600px) { .audience { grid-template-columns: 1fr; } }
+        .audience-card { background: #fff; border-radius: 18px; padding: 24px; border: 1px solid rgba(60,40,30,0.06); box-shadow: 0 2px 12px rgba(60,40,30,0.05); }
+        .audience-card.accent { background: linear-gradient(160deg, #FCE8D2 0%, #FFF1DD 100%); border-color: rgba(232,134,42,0.2); }
+        .audience-card h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+        .audience-card .icon { font-size: 32px; margin-bottom: 8px; }
+        .audience-card p { margin: 0 0 12px; color: #6B5040; font-size: 14px; }
+        .audience-card ul { margin: 0; padding-left: 18px; color: #6B5040; font-size: 14px; }
+        .audience-card li { margin-bottom: 4px; }
+
+        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        @media (max-width: 700px) { .steps { grid-template-columns: 1fr; } }
+        .step { text-align: center; padding: 0 8px; }
+        .step .num { display: inline-flex; width: 38px; height: 38px; align-items: center; justify-content: center; background: #E8862A; color: #fff; font-weight: 800; border-radius: 50%; margin-bottom: 12px; font-size: 16px; }
+        .step h3 { margin: 0 0 6px; font-size: 16px; font-weight: 700; }
+        .step p { margin: 0; color: #6B5040; font-size: 14px; }
+
+        section#tester { background: #FCF3E5; border-top: none; }
+        .badge { display: inline-block; background: #FCE8D2; color: #B3561F; font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 999px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 12px; }
+        .form-card { background: #fff; border-radius: 22px; padding: 28px; margin-top: 20px; box-shadow: 0 4px 20px rgba(60,40,30,0.06); border: 1px solid rgba(60,40,30,0.06); }
+        form { display: grid; gap: 14px; }
+        label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 4px; color: #6B5040; }
+        input, select, textarea { width: 100%; font-family: inherit; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(60,40,30,0.15); border-radius: 12px; background: #FFFCF6; color: #2C2520; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: #E8862A; background: #fff; }
+        textarea { min-height: 90px; resize: vertical; }
+        .form-note { font-size: 12px; color: #998877; margin: 4px 0 0; text-align: center; }
+
+        details { background: #fff; border-radius: 14px; padding: 16px 20px; margin-bottom: 10px; border: 1px solid rgba(60,40,30,0.06); }
+        details summary { cursor: pointer; font-weight: 700; font-size: 15px; list-style: none; position: relative; padding-right: 28px; }
+        details summary::-webkit-details-marker { display: none; }
+        details summary::after { content: "+"; position: absolute; right: 0; top: 0; font-size: 22px; color: #E8862A; font-weight: 400; }
+        details[open] summary::after { content: "−"; }
+        details p { margin: 12px 0 0; color: #6B5040; font-size: 14px; }
+
+        footer.site { padding: 32px 0 48px; text-align: center; color: #998877; font-size: 13px; border-top: 1px solid rgba(60,40,30,0.08); }
+        footer.site a { color: #6B5040; }
+        footer.site .links { margin-bottom: 8px; }
+        footer.site .links a { margin: 0 8px; }
+    </style>
+</head>
+<body>
+
+<header class="site">
+    <div class="container row">
+        <a href="/en/" class="brand" style="text-decoration: none;">
+            <img src="../app-icon.png" alt="Bumle Bjørn">
+            <span>Bumle Bjørn</span>
+        </a>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#professionals">Therapists</a>
+            <a href="#tester">Become a tester</a>
+        </nav>
+        <div class="lang-switch" aria-label="Choose language">
+            <a href="/" title="Norsk">🇳🇴</a>
+            <a href="/en/" class="active" aria-current="page" title="English">🇬🇧</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <img class="bear" src="../bumle-bear.png" alt="Bumle Bjørn mascot">
+        <h1>Mum's voice.<br>Not a robot voice.</h1>
+        <p class="lead">
+            Bumle Bjørn is an educational app for children ages 1 to 8. Words,
+            pictures and audio in your dialect. Parents, grandparents and
+            speech therapists record their own voices. Children hear people
+            they love.
+        </p>
+        <div class="cta-row">
+            <a href="https://apps.apple.com/app/id6761500591" class="app-store-badge">
+                <svg viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                <span class="text"><span class="small">Download on the</span><span class="big">App Store</span></span>
+            </a>
+            <a href="#tester" class="btn btn-secondary">Apply for free access</a>
+        </div>
+    </div>
+</section>
+
+<section id="features">
+    <div class="container">
+        <h2>What Bumle does</h2>
+        <p class="subtitle">Helps kids learn words and pictures through 7 game modes with a warm, friendly design.</p>
+
+        <div class="features">
+            <div class="feature">
+                <div class="icon">🎙️</div>
+                <h3>Your voice on every card</h3>
+                <p>Mum, dad, grandma, or the speech therapist records words, instructions and encouragement. Children hear familiar voices instead of a robot.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">📦</div>
+                <h3>Share voice packages</h3>
+                <p>Export all voice recordings as one file. Send via AirDrop or iMessage. Grandma in Tromsø sends her dialect to her grandchild in Oslo.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🎨</div>
+                <h3>Build your own categories</h3>
+                <p>21 ready-made categories with 430 illustrated cards, plus tools to create your own with your photos and words. 4 starter templates to begin with.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🌍</div>
+                <h3>9 languages</h3>
+                <p>Norwegian, Danish, Swedish, Finnish, English, German, French, Spanish, Dutch. The whole app, not just menus.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🔒</div>
+                <h3>Local on your device</h3>
+                <p>No ads, no third-party SDKs, no tracking. Recordings and photos are encrypted locally and never leave the iPhone.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">💛</div>
+                <h3>One-time purchase</h3>
+                <p>Bumle+ is a one-time payment, not a subscription. Pay once, own forever.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>What it looks like</h2>
+        <p class="subtitle">Screenshots from the app. Swipe to see more.</p>
+        <div class="screenshots">
+            <img src="../screenshots/01-home.png" alt="Home screen with categories">
+            <img src="../screenshots/02-game.png" alt="Game mode">
+            <img src="../screenshots/03-voices.png" alt="Voice recordings">
+            <img src="../screenshots/04-result.png" alt="Results">
+            <img src="../screenshots/05-bear.png" alt="The Bumle bear">
+        </div>
+    </div>
+</section>
+
+<section id="professionals">
+    <div class="container">
+        <h2>For parents and professionals</h2>
+        <p class="subtitle">Bumle is built for the home, but useful also for speech therapists, educators and health visitors.</p>
+
+        <div class="audience">
+            <div class="audience-card">
+                <div class="icon">👨‍👩‍👧</div>
+                <h3>Parents and family</h3>
+                <p>For children ages 1 to 8 learning words, or for bilingual families who want both dialects.</p>
+                <ul>
+                    <li>Record words in your own dialect</li>
+                    <li>Send recordings to grandparents far away</li>
+                    <li>7 game modes from exploration to memory and more</li>
+                    <li>Safe for kids: no ads, no external links</li>
+                </ul>
+            </div>
+
+            <div class="audience-card accent">
+                <div class="icon">🩺</div>
+                <h3>Speech therapists and educators</h3>
+                <p>Create packages for patients, send them home between sessions.</p>
+                <ul>
+                    <li>Record articulation, dialect or phonetic combinations</li>
+                    <li>Export as a <code>.bumlepack</code> file</li>
+                    <li>Send to parents via email or iMessage</li>
+                    <li>The patient gets your pronunciation right in the app</li>
+                    <li>Ready-made roles for therapist, teacher, educator, childminder</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>How voice packages work</h2>
+        <p class="subtitle">For a speech therapist creating a package for a patient. Takes 5 minutes.</p>
+        <div class="steps">
+            <div class="step">
+                <div class="num">1</div>
+                <h3>Record</h3>
+                <p>Pick the cards you are working with, and record your articulation directly in the app.</p>
+            </div>
+            <div class="step">
+                <div class="num">2</div>
+                <h3>Export</h3>
+                <p>Tap «Share package» and create one <code>.bumlepack</code> file with all your recordings.</p>
+            </div>
+            <div class="step">
+                <div class="num">3</div>
+                <h3>Share</h3>
+                <p>Send via email or iMessage. Parents tap the file, and the recordings appear in their Bumle.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="tester">
+    <div class="container">
+        <span class="badge">We are looking for testers</span>
+        <h2>Get free access to Bumle+</h2>
+        <p class="subtitle">
+            We are looking for people who want to test the new voice-package
+            feature and give honest feedback. Parents, speech therapists,
+            educators and health visitors can apply. You get a free Bumle+
+            code in exchange for your thoughts.
+        </p>
+
+        <div class="form-card">
+            <form id="testerForm" onsubmit="return sendApplication(event)">
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="role">Who are you?</label>
+                    <select id="role" name="role" required>
+                        <option value="">Pick a role</option>
+                        <option value="Parent">Parent</option>
+                        <option value="Speech therapist">Speech therapist</option>
+                        <option value="Educator / preschool">Educator / preschool</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Health visitor">Health visitor</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="why">What will you use Bumle for?</label>
+                    <textarea id="why" name="why" placeholder="E.g. «patients with dyslexia», «my toddler is learning a dialect», «trying it out at my preschool»…"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="justify-self: stretch; justify-content: center;">Send application</button>
+                <p class="form-note">Your email client opens with the application pre-filled. You send it yourself.</p>
+            </form>
+        </div>
+
+        <script>
+            function sendApplication(event) {
+                event.preventDefault();
+                var name = document.getElementById('name').value.trim();
+                var email = document.getElementById('email').value.trim();
+                var role = document.getElementById('role').value;
+                var why = document.getElementById('why').value.trim();
+                var subject = 'Application for Bumle Bjørn access: ' + name;
+                var bodyLines = [
+                    'Name: ' + name,
+                    'Email: ' + email,
+                    'Role: ' + role,
+                    '',
+                    'What will you use Bumle for?',
+                    why || '(not filled in)',
+                    '',
+                    'Sent from bumle.app.'
+                ];
+                var body = bodyLines.join('\n');
+                var href = 'mailto:jonas@bumle.app'
+                    + '?subject=' + encodeURIComponent(subject)
+                    + '&body=' + encodeURIComponent(body);
+                window.location.href = href;
+                return false;
+            }
+        </script>
+    </div>
+</section>
+
+<section id="faq">
+    <div class="container">
+        <h2>Questions you might have</h2>
+        <p class="subtitle">Short answers to what we hear most often.</p>
+
+        <details><summary>Does Bumle Bjørn cost anything?</summary><p>You can download for free and use 2 categories (Animals and Colors and Shapes) plus 3 game modes. Bumle+ unlocks all 21 categories, all 7 game modes, unlimited voice recordings and voice-package sharing. Bumle+ is a one-time payment, not a subscription.</p></details>
+        <details><summary>What is an AAC app, and is Bumle one?</summary><p>AAC stands for Augmentative and Alternative Communication, and is for children without spoken language. Bumle is not an AAC app. Bumle helps children learn words and pronunciation, and is especially useful for parents with a dialect or speech therapists working on articulation.</p></details>
+        <details><summary>How does voice-package sharing work?</summary><p>You record audio in the app, tap «Share package», and get one file (.bumlepack). Send the file via AirDrop, iMessage, email or save it in Files. The recipient taps the file, and the recordings are imported into their Bumle. All sharing happens through the system's standard channels. Nothing goes through our servers.</p></details>
+        <details><summary>Where are recordings and photos stored?</summary><p>Only locally on your iPhone, encrypted with a device-specific key. Bumle Bjørn never sends recordings to our or third-party servers. When you explicitly share a voice package, it goes through your own email, iMessage or AirDrop.</p></details>
+        <details><summary>Are there ads or tracking?</summary><p>No. No ads, no third-party SDKs, no tracking. Bumle is approved for the App Store Kids Category, which requires strict compliance with children's privacy.</p></details>
+        <details><summary>Which languages are supported?</summary><p>9 languages: Norwegian (Bokmål), Danish, Swedish, Finnish, English, German, French, Spanish and Dutch. The whole app is translated, not just menus.</p></details>
+        <details><summary>What age is the app for?</summary><p>1 to 8 years. Younger children use simple modes like «Listen and find» and «Explore», while older children can use memory, counting and «Find in the picture». Difficulty adapts automatically.</p></details>
+        <details><summary>How does parental control work?</summary><p>Settings are gated behind a math problem (Kids Category requirement) and an optional PIN or Face ID. Screen-time limits, daily goals and weekly progress reports.</p></details>
+    </div>
+</section>
+
+<footer class="site">
+    <div class="container">
+        <div class="links">
+            <a href="/personvern">Privacy (Norwegian)</a>
+            <a href="/vilkar">Terms (Norwegian)</a>
+            <a href="https://apps.apple.com/app/id6761500591">App Store</a>
+        </div>
+        <p>Questions? <a href="mailto:jonas@bumle.app">jonas@bumle.app</a></p>
+        <p style="font-size: 12px; margin-top: 16px;">Built by dad Jonas. Tested by Synne.</p>
+    </div>
+</footer>
+
+</body>
+</html>
