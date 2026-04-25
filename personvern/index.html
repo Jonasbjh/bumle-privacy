@@ -24,7 +24,7 @@
 </head>
 <body>
     <h1>Personvernerklæring</h1>
-    <p class="updated">Sist oppdatert: 1. april 2026</p>
+    <p class="updated">Sist oppdatert: 25. april 2026</p>
 
     <p>Bumle Bjørn er utviklet av Jonas Haug. Denne personvernerklæringen forklarer hvordan appen håndterer data. Vi tar personvern på alvor — spesielt fordi appen er laget for barn.</p>
 
@@ -33,21 +33,30 @@
     <p>All data som appen bruker lagres <strong>lokalt på enheten</strong> og eventuelt i brukerens egen iCloud-konto:</p>
     <ul>
         <li><strong>Barneprofiler:</strong> Navn, alder, avatar og læringsframgang lagres i UserDefaults og synkroniseres via iCloud Key-Value Store til brukerens egne enheter.</li>
-        <li><strong>Lydopptak:</strong> Stemmeopptak som foreldre spiller inn lagres kun lokalt på enheten. De synkroniseres <strong>ikke</strong> med iCloud eller noen ekstern tjeneste.</li>
-        <li><strong>Egne bilder:</strong> Profilbilder og egne kategoribilder lagres lokalt på enheten.</li>
+        <li><strong>Lydopptak:</strong> Stemmeopptak som foreldre eller fagpersoner spiller inn lagres kun lokalt på enheten og er kryptert med en enhetsspesifikk nøkkel. Bumle Bjørn sender aldri opptak til våre eller tredjeparts servere — ingen automatisk synkronisering skjer.</li>
+        <li><strong>Egne kategorier og bilder:</strong> Foreldre kan lage egne kategorier med egne bilder (f.eks. familien, leker eller steder barnet kjenner). Bilder og kategori-data lagres kun lokalt på enheten.</li>
         <li><strong>Innstillinger:</strong> Brukervalg som språk, vanskelighetsgrad og skjermtid lagres lokalt.</li>
     </ul>
 
-    <h2>2. Tredjeparter</h2>
+    <h2>2. Deling av lyd-pakker</h2>
+    <p>Foreldre eller fagpersoner (f.eks. logopeder) kan velge å eksportere alle opptakene fra én stemme som en <code>.bumlepack</code>-fil og dele filen via systemets vanlige delingsmuligheter (AirDrop, iMessage, Filer m.m.):</p>
+    <ul>
+        <li>Eksport skjer kun når brukeren eksplisitt velger det — det skjer ingen automatisk deling.</li>
+        <li>Når du deler en pakke, går filen utenfor Bumle Bjørns kontroll og er underlagt delings-kanalens egne vilkår.</li>
+        <li>Pakken inneholder lydopptak i klartekst slik at mottakeren kan importere dem på sin enhet. Mottakerens enhet krypterer filene på nytt med sin egen lokale nøkkel.</li>
+        <li>Du har ansvar for å sikre at delingen skjer med samtykke fra alle involverte (f.eks. den som har spilt inn stemmen).</li>
+    </ul>
+
+    <h2>3. Tredjeparter</h2>
     <p>Bumle Bjørn bruker <strong>ingen</strong> tredjeparts SDK-er, analysetjenester, annonsenettverk eller sporingsverktøy. Vi deler ingen data med tredjeparter.</p>
 
-    <h2>3. Annonsering og sporing</h2>
+    <h2>4. Annonsering og sporing</h2>
     <p>Appen inneholder <strong>ingen reklame</strong> og <strong>ingen sporing</strong>. Vi bruker ikke IDFA, fingerprinting eller andre identifiseringsmetoder.</p>
 
-    <h2>4. Abonnementer</h2>
-    <p>Bumle+ er et valgfritt abonnement som håndteres av Apple gjennom App Store. Vi har ikke tilgang til betalingsinformasjon. Abonnementsstatus sjekkes via StoreKit og lagres lokalt.</p>
+    <h2>5. Bumle+ engangskjøp</h2>
+    <p>Bumle+ er et valgfritt engangskjøp (ingen abonnement, ingen automatisk fornyelse) som håndteres av Apple gjennom App Store. Vi har ikke tilgang til betalingsinformasjon. Kjøpsstatus sjekkes via StoreKit og lagres lokalt.</p>
 
-    <h2>5. Barn og COPPA</h2>
+    <h2>6. Barn og COPPA</h2>
     <p>Bumle Bjørn er designet for barn i alderen 1–8 år. Appen:</p>
     <ul>
         <li>Samler ikke inn personlig identifiserbar informasjon fra barn</li>
@@ -57,27 +66,29 @@
         <li>Inneholder ikke reklame</li>
     </ul>
 
-    <h2>6. Datakontroll</h2>
+    <h2>7. Datakontroll</h2>
     <p>Foreldre har full kontroll over all data:</p>
     <ul>
         <li><strong>Sletting:</strong> All data kan slettes permanent via Innstillinger → Om Bumle Bjørn → Slett alle data.</li>
         <li><strong>Lydopptak:</strong> Individuelle opptak kan slettes via lydinnstillingene.</li>
         <li><strong>Profiler:</strong> Profiler kan slettes enkeltvis i sidemenyen.</li>
+        <li><strong>Importerte stemmer:</strong> Stemmer importert fra en <code>.bumlepack</code>-pakke kan slettes som vanlig stemme.</li>
     </ul>
 
-    <h2>7. Sikkerhet</h2>
+    <h2>8. Sikkerhet</h2>
     <ul>
         <li>PIN-koder lagres som SHA256-hash i iOS Keychain</li>
-        <li>Lydopptak er kryptert med CryptoKit</li>
+        <li>Lydopptak er kryptert med AES-256-GCM (CryptoKit)</li>
+        <li>Krypteringsnøkkelen er enhetsspesifikk og forlater aldri Keychain</li>
         <li>Filer er beskyttet med iOS File Protection</li>
         <li>Foreldrelås krever PIN og/eller Face ID</li>
     </ul>
 
-    <h2>8. Endringer</h2>
+    <h2>9. Endringer</h2>
     <p>Vi kan oppdatere denne personvernerklæringen ved behov. Endringer vil bli publisert på denne siden med oppdatert dato.</p>
 
     <div class="contact">
-        <h2 style="margin-top: 0;">9. Kontakt</h2>
+        <h2 style="margin-top: 0;">10. Kontakt</h2>
         <p>Har du spørsmål om personvern? Kontakt oss:</p>
         <p>
             <strong>Jonas Haug</strong><br>
