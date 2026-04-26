@@ -571,6 +571,47 @@
     .bear-wrap .app-icon { border-radius: 27px; }
   }
 
+  @media (max-width: 600px) {
+    aside { padding: 24px 20px; }
+    aside h1 { font-size: 36px; line-height: 1.05; }
+    aside .lede { font-size: 14px; }
+    main { padding: 28px 20px; }
+    section { padding: 44px 0; }
+
+    .eyebrow { letter-spacing: .2em; font-size: 9px; margin-bottom: 14px; }
+    .pull-quote { font-size: 24px; line-height: 1.25; }
+    .h-display { font-size: 24px; line-height: 1.2; margin-bottom: 22px; }
+    .essay { font-size: 17px; line-height: 1.6; }
+    .essay p { margin: 0 0 18px; }
+
+    .ed-row h3, .steps h3 { font-size: 19px; }
+    .steps .num { font-size: 22px; }
+    .steps li { grid-template-columns: 32px 1fr; gap: 14px; }
+
+    .price-num { font-size: 44px; }
+    .price-row { gap: 16px; }
+
+    .faq { padding: 14px 0; }
+    .faq summary { font-size: 18px; gap: 12px; }
+
+    .phone { width: 200px; height: 433px; border-radius: 32px; }
+    .phone-screen { border-radius: 25px; }
+
+    .bear-wrap { padding: 16px 0; }
+    .bear-wrap svg, .bear-wrap .app-icon { width: 100px; height: 100px; }
+    .bear-wrap .app-icon { border-radius: 22px; }
+
+    .meta-row { gap: 10px; flex-wrap: wrap; justify-content: flex-start; }
+    .footer-tag { font-size: 16px; }
+    .footer-links { gap: 14px; font-size: 11px; }
+
+    .tester-card { padding: 22px 18px; }
+  }
+
+  @supports (padding: env(safe-area-inset-bottom)) {
+    main { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .waveform > span, .phone-rec-dot::after { animation: none; }
     .cta-app-store, .app-store-badge, .faq-icon, .tester-card .submit { transition: none; }
