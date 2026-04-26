@@ -200,6 +200,12 @@
     overflow: hidden;
     position: relative;
   }
+  .phone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
   .phone-island {
     position: absolute;
     top: 9px;
@@ -653,26 +659,9 @@
       <div class="eyebrow">02 — Slik føles det</div>
       <h2 class="h-display">Trykk. Snakk. <em>Stemmen din er der.</em></h2>
       <div class="phone-wrap">
-        <div class="phone" aria-hidden="true">
+        <div class="phone">
           <div class="phone-screen">
-            <div class="phone-island"></div>
-            <div class="phone-content">
-              <div class="phone-eyebrow">Dyr</div>
-              <div class="phone-card">
-                <svg><use href="#bumle-paper"/></svg>
-                <div class="phone-card-label">Bjørn</div>
-              </div>
-              <div class="phone-rec">
-                <div class="phone-rec-dot"></div>
-                <div class="waveform">
-                  <span></span><span></span><span></span><span></span>
-                  <span></span><span></span><span></span><span></span>
-                  <span></span><span></span><span></span><span></span>
-                  <span></span><span></span><span></span><span></span>
-                </div>
-                <div class="phone-time">0:03</div>
-              </div>
-            </div>
+            <img src="voice-card-no.png" alt="Per-kort opptak i Bumle — waveform og opptak-knapp">
           </div>
         </div>
       </div>
